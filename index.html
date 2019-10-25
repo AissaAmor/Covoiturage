@@ -65,11 +65,11 @@
 						<h2>Se connecter</h2>
 						<div class="form-group">
 							<label for="" class="label">User Name</label>
-							<input type="text" class="form-control" placeholder="Entrez votre UserName">
+							<input type="text" class="form-control" id="login" placeholder="Entrez votre UserName">
 						</div>
 						<div class="form-group">
 							<label for="" class="label">Mot de passe</label>
-							<input type="password" class="form-control" placeholder="Tapez votre mot de passe">
+							<input type="password" class="form-control" id="mdpass" placeholder="Tapez votre mot de passe">
 						</div>
 						<!-- <div class="d-flex">
 							<div class="form-group mr-2">
@@ -86,7 +86,7 @@
 							<input type="text" class="form-control" id="time_pick" placeholder="Time">
 						</div> -->
 						<div class="form-group">
-							<input type="button" value="Se connecter" class="btn btn-primary py-3 px-4">
+							<input type="button" value="Se connecter" onclick="check()" class="btn btn-primary py-3 px-4">
 						</div>
 						<div class="form-group">
 							<a href="contact.html">	<input type="button" value="S'inscrire" class="btn btn-primary py-3 px-4" > </a>
@@ -339,7 +339,7 @@
 			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
 				stroke="#F96D00" /></svg></div>
 
-
+				<script src="js/inscri.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="js/popper.min.js"></script>

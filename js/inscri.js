@@ -193,3 +193,22 @@ function myBoutton() {
     console.log(localStorage.getItem("User"));
     console.log(JSON.parse(localStorage.getItem("User")));
 }
+function check() {
+    var User = JSON.parse(localStorage.getItem("User"));
+
+
+
+    var userName = document.getElementById('login');
+    var userPw = document.getElementById('mdpass');
+    var verif = false;
+    for (i = 0; i < User.length; i++) {
+        if (userName.value == User[i].userName || userPw.value == User[i].password) {
+            localStorage.setItem("loggedUser", JSON.stringify(User[i]))
+            verif = true;
+        }
+
+    }
+    if (verif) {
+        location.href = 'dashboard admin/index.html';
+    }
+}
