@@ -108,7 +108,7 @@
                 <span id="messages03" style="color: red;"> </span>
               </div>
               <div class="form-group">
-                <input type="date" class="form-control" placeholder="Date de naissance">
+                <input type="date" class="form-control" id="naiss" placeholder="Date de naissance">
               </div>
               <div class="form-group">
                 <input type="number" class="form-control" id="num"placeholder="Téléphone" onblur="mynum()">
@@ -118,20 +118,27 @@
                 <input type="text" class="form-control" id="adresse" placeholder="Adresse" onblur="myadresse()">
                 <span id="messages05" style="color: red;"> </span>
               </div> 
-              <div >
-                <label>Sexe</label>
-                <input type="checkbox"  value="homme">homme 
-                <input type="checkbox"  value="Femme"> femme 
-              </div>
               <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Adresse">
+                  <input type="password" class="form-control" id="pass" placeholder="Mot de passe" onblur="myPass()">
+                  <span id="messages07" style="color: red;"> </span>
                 </div> 
-                <form action="/action_page.php">
-                  <input type="file" name="pic" accept="image/*">
-                  
-                </form>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="confirmMot" placeholder="Confirme mot de passe" onblur="myConfirm()">
+                    <span id="messages08" style="color: red;"> </span>
+                  </div> 
               <div class="form-group">
-                <input type="button" value="S'incrire" class="btn btn-primary py-3 px-5">
+
+                <form id="sex">
+                <label>Sexe</label>
+                <input type="radio" onclick="clickh()" name="genre" id="myRadio"value="homme">homme 
+                <input type="radio"  onclick="clickh()" name="genre" id="myRa" value="Femme"> femme <br>
+                </form> 
+                
+                <!-- <input id="messages06" style="color: red;" > -->
+              </div>
+             
+              <div class="form-group">
+                <input type="button" value="S'incrire" onclick="myBoutton()"class="btn btn-primary py-3 px-5">
               </div>
             </form>
           
@@ -145,7 +152,7 @@
       </div>
     </section>
 
-    < <footer class="ftco-footer ftco-bg-dark ftco-section">
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
         <!--  <div class="col-md">
