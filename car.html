@@ -66,11 +66,10 @@
 			</div>
 		</div>
 	</section>
-	<div class="row">
-		<div class="col-md-5"></div>
-		<div class="col-md-7"><br><br><br>
-			<h2 style="color: #871454;">Ajouer votre trajet</h2><br><br>
-		</div>
+	<div>
+		<br><br><br>
+		<h1 style="color: #871454; text-align: center;">Ajouer votre trajet</h1><br><br>
+	</div>
 	</div>
 	<div class="row trajet">
 		<div class="col-md-1"></div>
@@ -111,7 +110,7 @@
 			<input type="date" class="depart" id="dateDepart">
 		</div>
 	</div>
-	<div class="row">
+	<div class="row detailAnnonce">
 		<div class="col-md-3"></div>
 		<div class="col-md-2">
 			<br>
@@ -131,21 +130,24 @@
 			<input type="number" class="car" placeholder="Nombre des places" id="place"><br><br>
 			<form>
 				<input type="radio" name="clim" class="btnradio" id="clim1" value="Oui" onclick="checkradio1()">Oui
-				<input type="radio" name="clim" class="btnradio" id="clim1" value="Non"	onclick="checkradio1()">Nom<br><br>
+				<input type="radio" name="clim" class="btnradio" id="clim1" value="Non"
+					onclick="checkradio1()">Nom<br><br>
 			</form>
 			<form>
 				<input type="radio" name="fume" class="btnradio" id="fumee" value="Oui" onclick="checkradio2()">Oui
-				<input type="radio" name="fume" class="btnradio" id="fumee" value="Non" onclick="checkradio2()">Nom<br><br>
+				<input type="radio" name="fume" class="btnradio" id="fumee" value="Non"
+					onclick="checkradio2()">Nom<br><br>
 			</form>
 			<form>
 				<input type="radio" name="music" class="btnradio" id="music" value="Oui" onclick="checkradio3()">Oui
-				<input type="radio" name="music" class="btnradio" id="music" value="Non" onclick="checkradio3()">Nom<br><br>
+				<input type="radio" name="music" class="btnradio" id="music" value="Non"
+					onclick="checkradio3()">Nom<br><br>
 			</form>
 			<input type="text" class="commentaire" id="com">
 		</div>
 	</div>
 	<br><br><br>
-	<div class="row">
+	<div class="row valideBtn">
 		<div class="col-md-8"></div>
 		<div class="col-md-4">
 			<input type="button" id="btnTrajet" value="Valider Trajet" onclick="check()">

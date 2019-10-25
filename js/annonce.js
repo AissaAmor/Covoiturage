@@ -40,3 +40,6 @@ localStorage.setItem('table', JSON.stringify(mytable));
 // var x=document.querySelector('[input="clim"]:checked').value;
 // var y=document.querySelector('[input="fume"]:checked').value;
 // var z=document.querySelector('[input="music"]:checked').value;
+function ajoutAnnonceProfil(){
+    
+}
