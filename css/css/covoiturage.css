@@ -48,3 +48,18 @@
     opacity: 0.9;
 }
 
+.profil{
+    padding-left: 20px;
+    width: 250px;
+    font-weight: 500;
+    height: 50px;
+    font-size: 13px;
+    border: 1px solid skyblue ;
+    color: #7575A1 ;
+    background: transparent ;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+     border-radius: 0;
+     margin-top: 5px;
+}
