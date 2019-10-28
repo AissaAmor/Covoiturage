@@ -202,13 +202,19 @@ function check() {
     var userPw = document.getElementById('mdpass');
     var verif = false;
     for (i = 0; i < User.length; i++) {
-        if (userName.value == User[i].userName || userPw.value == User[i].password) {
+        if (userName.value == User[i].userName.match("hach") && userPw.value == User[i].password) {
             localStorage.setItem("loggedUser", JSON.stringify(User[i]))
             verif = true;
+            location.href = 'dashboard admin/index.html';
+        }
+        else if (userName.value == User[i].userName && userPw.value == User[i].password) {
+            localStorage.setItem("loggedUser", JSON.stringify(User[i]))
+            verif = true;
+            location.href = 'index.html';
         }
 
     }
-    if (verif) {
-        location.href = 'dashboard admin/index.html';
-    }
+    // if (verif) {
+    //     location.href = 'dashboard admin/index.html';
+    // }
 }
