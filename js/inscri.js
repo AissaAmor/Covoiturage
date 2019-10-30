@@ -182,6 +182,7 @@ function myBoutton() {
         email: document.getElementById("mail").value,
         dateDeNaissance: document.getElementById("naiss").value,
         num: document.getElementById("num").value,
+        adresse:document.getElementById("adresse").value,
         password: document.getElementById("pass").value,
         sexe: document.querySelector('input[name="genre"]:checked').value, 
         // confirmPassword: document.getElementById("confirmMot").value,
