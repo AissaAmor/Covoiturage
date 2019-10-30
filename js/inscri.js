@@ -193,3 +193,45 @@ function myBoutton() {
     console.log(localStorage.getItem("User"));
     console.log(JSON.parse(localStorage.getItem("User")));
 }
+function check() {
+    var User = JSON.parse(localStorage.getItem("User"));
+    
+
+    var userName = document.getElementById('login');
+    var userPw = document.getElementById('mdpass');
+    // var verif = false;
+    for (i = 0; i < User.length; i++) {
+        if (userName.value == User[i].userName.match("hach") && userPw.value == User[i].password) {
+            localStorage.setItem("loggedUser", JSON.stringify(User[i]))
+            location.href = 'dashboard admin/index.html';
+            // verif = true; 
+        }
+        else if (userName.value == User[i].userName && userPw.value == User[i].password) {
+            localStorage.setItem("loggedUser", JSON.stringify(User[i]))
+            location.href = 'userConnected.html';
+            // verif = true;  
+            //  console.log(logged);               
+    }
+    } 
+    
+}
+function logout() { 
+    localStorage.removeItem('loggedUser');
+    location.href = 'index.html';
+} 
+
+function connected() { 
+    var loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+    
+    if(loggedUser == null) { 
+        console.log(loggedUser) ;
+        
+        location.href = 'index.html';
+    }
+    else {location.href = 'userConnected.html'; } 
+}
+
+function session() {  
+    var logged = JSON.parse(localStorage.getItem('loggedUser'));  
+    document.getElementById('loggedU').innerHTML=logged.userName ; 
+}

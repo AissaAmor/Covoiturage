@@ -38,7 +38,7 @@
     height: 100px;
 }
 #btnTrajet{
-    background-color: #AB235A;
+    background-color: #F7B71D;
     color: white;
     padding: 16px 20px;
     margin: 8px 0;
@@ -62,4 +62,14 @@
     -ms-border-radius: 0;
      border-radius: 0;
      margin-top: 5px;
+}
+.taswirti { 
+    height:50px;
+} 
+.menuyeah{ 
+    margin-top: 10px;
+} 
+#loggedU { 
+    padding-left: 20px;
+    color: #ffffff;
 }
