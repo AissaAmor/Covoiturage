@@ -14,7 +14,7 @@ function checkradio3() {
 }
 function addTrajet() {
     var mytable = JSON.parse(localStorage.getItem('table'));
-    var connectedUser = JSON.parse(localStorage.getItem("User"));
+    // var connectedUser = JSON.parse(localStorage.getItem("User"));
     var dep = document.getElementById('depart1').value;
     var dest = document.getElementById('arrive').value;
     var date = document.getElementById('dateDepart').value;
@@ -45,8 +45,10 @@ function afficheAnnonceProfil() {
     document.getElementById('part2').style.display = 'none';
     document.getElementById('part1').style.display = 'block';
     var mytable = JSON.parse(localStorage.getItem('table'));
+    var connectedUser = JSON.parse(localStorage.getItem("User"));
     var html = ``;
     for (i = 0; i < mytable.length; i++) {
+        if(mytable[i].idUser == connectedUser.id){
         html += `<tr>
                         <td id="bt1"><label id="titre2">Trajet N°${i+1}</label><br>
                             <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
@@ -61,6 +63,7 @@ function afficheAnnonceProfil() {
                             </td>
                             </tr>`
             // console.log(mytable[i].id);
+        }
     }
     document.getElementById('table1').innerHTML = html;
 }
@@ -92,7 +95,8 @@ function afficheAnnonce(pos) {
 function editAnnonce(pos){
     var mytable = JSON.parse(localStorage.getItem('table'));
     console.log(pos);
-    var todo = {
+    var tabUser = {
+
         prix: document.getElementById('cout').value,
         placee: document.getElementById('nombrePlaces').value,
         dateT:document.getElementById('dateDep').value
@@ -102,8 +106,8 @@ function editAnnonce(pos){
         // commentaire: document.getElementById('comm').value,
     }
     
-    mytable.splice(pos,1,todo);
+    mytable.splice(pos,1,tabUser);
     localStorage.setItem('table', JSON.stringify(mytable));
-    console.log(mytable);
-    // this.editAnnonce();
+    
+    this.editAnnonce();
 }

@@ -39,11 +39,23 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item"><a class="nav-link" onclick="connected()">Home</a></li>
-	          <li class="nav-item active"><a onclick="aboutConnected()" class="nav-link">About</a></li>
+	          <li class="nav-item active"><a class="nav-link" onclick="aboutConnected()">About</a></li>
 	          <!-- <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
 	          <li class="nav-item"><a href="car.html" class="nav-link">Our Car</a></li>
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
-	          <li class="nav-item"><a href="contact.html" class="nav-link">S'inscrire</a></li>
+	          <li class="nav-item dropdown">
+                <a class="nav-link avatar-with-name taswirti" id="navbarDropdownMenuLink" data-toggle="dropdown">
+                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg"
+                    class="d-inline-block align-top taswirti" alt="">
+                  <label type="text" id="loggedU"> </label>
+                </a>
+    
+                <div class="dropdown-menu dropdown-menu-right menuyeah" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="pricing.html">Modifier Profile</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item text-danger" onclick="logout()" href="index.html">Se Déconnecter</a>
+                </div>
+              </li>
 	        </ul>
 	      </div>
 	    </div>
