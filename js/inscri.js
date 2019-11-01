@@ -173,6 +173,7 @@ function myBoutton() {
 
 
     console.log(User);
+    var etatUser='';
     var utilisateur = {
 
         id : Math.floor((Math.random() * 1000) + 1),
@@ -182,8 +183,10 @@ function myBoutton() {
         email: document.getElementById("mail").value,
         dateDeNaissance: document.getElementById("naiss").value,
         num: document.getElementById("num").value,
+        adresse:document.getElementById("adresse").value,
         password: document.getElementById("pass").value,
         sexe: document.querySelector('input[name="genre"]:checked').value, 
+        Etat: etatUser
         // confirmPassword: document.getElementById("confirmMot").value,
 
     };
@@ -192,29 +195,55 @@ function myBoutton() {
     localStorage.setItem("User", val);
     console.log(localStorage.getItem("User"));
     console.log(JSON.parse(localStorage.getItem("User")));
+    location.href = 'index.html';
 }
 function check() {
     var User = JSON.parse(localStorage.getItem("User"));
-
-
+    
 
     var userName = document.getElementById('login');
     var userPw = document.getElementById('mdpass');
-    var verif = false;
+    // var verif = false;
     for (i = 0; i < User.length; i++) {
         if (userName.value == User[i].userName.match("hach") && userPw.value == User[i].password) {
             localStorage.setItem("loggedUser", JSON.stringify(User[i]))
-            verif = true;
             location.href = 'dashboard admin/index.html';
+            // verif = true; 
+            // if(User[i].Etat.match("Inactive")) {
+           //   location.href="#";
+            //} 
+        
         }
+        else if(User[i].Etat.match("Inactive")) {
+               location.href="#";
+             } 
         else if (userName.value == User[i].userName && userPw.value == User[i].password) {
+                 
             localStorage.setItem("loggedUser", JSON.stringify(User[i]))
-            verif = true;
-            location.href = 'index.html';
-        }
-
+            location.href = 'userConnected.html';
+            // verif = true;  
+            //  console.log(logged);               
     }
-    // if (verif) {
-    //     location.href = 'dashboard admin/index.html';
-    // }
+    } 
+    
+}
+function logout() { 
+    localStorage.removeItem('loggedUser');
+    location.href = 'index.html';
+} 
+
+function connected() { 
+    var loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+    
+    if(loggedUser == null) { 
+        console.log(loggedUser) ;
+        
+        location.href = 'index.html';
+    }
+    else {location.href = 'userConnected.html'; } 
+}
+
+function session() {  
+    var logged = JSON.parse(localStorage.getItem('loggedUser'));  
+    document.getElementById('loggedU').innerHTML=logged.userName ; 
 }
