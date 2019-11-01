@@ -26,6 +26,7 @@ function affichUser() {
     <th scope="col">TELEPHONE</th>
     <th scope="col">ADRESSE</th>
     <th scope="col">Sexe</th>
+    <th scope="col">Role</th> 
     <th scope="col">Actions</th>
   </tr>
   </thead>`;
@@ -49,10 +50,11 @@ function affichUser() {
               <td>${todoUser[i].num}</td>
               <td>${todoUser[i].adresse}</td>
                <td>${todoUser[i].sexe}</td>
+               <td id="rola">${todoUser[i].Etat}</td>
               
               <td>
-                <button class="btn btn-sm btn-primary">Edit</button>
-                <button class="btn btn-sm btn-danger">Delete</button>
+                <button class="btn btn-sm btn-primary"onclick="active(${i})">Active</button>
+                <button class="btn btn-sm btn-danger" onclick="inactive(${i})">Inactive</button>
               </td>
             </tr>
             </tbody>`
@@ -72,4 +74,21 @@ function affichUser() {
     document.getElementById('myTable').innerHTML = html;
 
 
+}
+function inactive(pos) { 
+    var todoUser = JSON.parse(localStorage.getItem('User')) || []
+
+    console.log(pos);
+    
+    // todoUser[pos].Etat="";
+    todoUser[pos].Etat="Inactive";
+    console.log(todoUser[pos].Etat);
+    localStorage.setItem('User', JSON.stringify(todoUser));
+    affichUser();
+} 
+function active(pos) { 
+  var todoUser=JSON.parse(localStorage.getItem('User')) || []
+  todoUser[pos].Etat="Active" ; 
+  localStorage.setItem('User',JSON.stringify(todoUser)); 
+  affichUser();
 }
