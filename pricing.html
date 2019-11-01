@@ -113,25 +113,27 @@
     </div>
   </div>
   <br><br><br>
-  <div id="part1">
+
+
+
+  <section id="part1">
   <div class="row mesTrajets">
-      <div class="col-md-2"></div>
-      <div class="col-md-6">
-        <label>Mes Trajets</label>
-        <table id="table1"></table>
-      </div>
-      <div class="col-md-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
         <input type="button" id="bttModifier" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
-      </div>
+        <label id="titre1">Mes Trajets</label>
+        <table id="table1"></table>
     </div><br><br><br><br>
-  </div>
-  <div id="part2">
+  </section>
+  <section id="part2">
   <div class="row modifierTrajet">
       <div class="col-md-2"></div>
       <div class="col-md-2">
+          <label id="titre2"></label>
           <label>Votre Voiture :</label><br><br>
           <label>Frais de trajet :</label><br><br>
           <label>Nombre des places :</label><br><br><br>
+          <label>Date de trajet :</label><br><br><br>
           <label>Climatisation :</label><br><br>
           <label>Fumées :</label><br><br>
           <label>Music :</label><br><br>
@@ -139,30 +141,30 @@
       </div>
       <div class="col-md-6">
         <select class="car">
-          <option>Kia</option>
         </select><br>
         <input type="number" class="car" placeholder="Prix par Passager en DT" id="cout"><br>
         <input type="number" class="car" placeholder="Nombre des places" id="nombrePlaces"><br><br>
+        <input type="date" class="depart" id="dateDep">
         <form>
-          <input type="radio" name="clim" class="btnradio" id="climatiseur" value="Oui" onclick="checkradio1()">Oui
-          <input type="radio" name="clim" class="btnradio" id="climatiseur" value="Non"
+          <input type="radio" name="clima" class="btnradio" id="climatiseur" value="Oui" onclick="checkradio1()">Oui
+          <input type="radio" name="clima" class="btnradio" id="climatiseur" value="Non"
             onclick="checkradio1()">Nom<br><br>
         </form>
         <form>
-          <input type="radio" name="fume" class="btnradio" id="OptionFumee" value="Oui" onclick="checkradio2()">Oui
-          <input type="radio" name="fume" class="btnradio" id="OptionFumee" value="Non"
+          <input type="radio" name="tabac" class="btnradio" id="OptionFumee" value="Oui" onclick="checkradio2()">Oui
+          <input type="radio" name="tabac" class="btnradio" id="OptionFumee" value="Non"
             onclick="checkradio2()">Nom<br><br>
         </form>
         <form>
-          <input type="radio" name="music" class="btnradio" id="optionMusic" value="Oui" onclick="checkradio3()">Oui
-          <input type="radio" name="music" class="btnradio" id="optionMusic" value="Non"
+          <input type="radio" name="musique" class="btnradio" id="optionMusic" value="Oui" onclick="checkradio3()">Oui
+          <input type="radio" name="musique" class="btnradio" id="optionMusic" value="Non"
             onclick="checkradio3()">Nom<br><br>
         </form>
-        <input type="text" class="commentaire" id="com">
+        <input type="text" class="commentaire" id="comm"><br>
+        <div id="btt"></div>
       </div>
     </div>
-  </div>
-
+</section>
   <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
     </div>
