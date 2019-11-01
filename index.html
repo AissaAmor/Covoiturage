@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Autoroad - Free Bootstrap 4 Template by Colorlib</title>
+	<title>Covoiturage</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,13 +27,14 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/css/covoiturage.css">
 </head>
 
 <body>
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
-			<a class="navbar-brand" href="index.html">Auto<span>road</span></a>
+			<a class="navbar-brand" href="index.html">Hezni<span>m3ak</span></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
 				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
@@ -42,7 +43,7 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-					<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+					<li class="nav-item"><a onclick="aboutConnected()" class="nav-link">About</a></li>
 					<!-- <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
 					<li class="nav-item"><a href="car.html" class="nav-link">Our Car</a></li>
 					<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
@@ -53,7 +54,8 @@
 	</nav>
 	<!-- END nav -->
 	<!-- INSCRIPTION -->
-	<div class="hero-wrap" style="background-image: url('images/covoiturage2.jpg');" data-stellar-background-ratio="0.5">
+	<div class="hero-wrap" style="background-image: url('images/covoiturage2.jpg');"
+		data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row no-gutters slider-text justify-content-start align-items-center">
@@ -69,7 +71,8 @@
 						</div>
 						<div class="form-group">
 							<label for="" class="label">Mot de passe</label>
-							<input type="password" class="form-control" id="mdpass" placeholder="Tapez votre mot de passe">
+							<input type="password" class="form-control" id="mdpass"
+								placeholder="Tapez votre mot de passe">
 						</div>
 						<!-- <div class="d-flex">
 							<div class="form-group mr-2">
@@ -86,11 +89,13 @@
 							<input type="text" class="form-control" id="time_pick" placeholder="Time">
 						</div> -->
 						<div class="form-group">
-							<input type="button" value="Se connecter" onclick="check()" class="btn btn-primary py-3 px-4">
+							<input type="button" value="Se connecter" onclick="check()"
+								class="btn btn-primary py-3 px-4">
 						</div>
 						<div class="form-group">
-							<a href="contact.html">	<input type="button" value="S'inscrire" class="btn btn-primary py-3 px-4" > </a>
-							</div>
+							<a href="contact.html"> <input type="button" value="S'inscrire"
+									class="btn btn-primary py-3 px-4"> </a>
+						</div>
 					</form>
 				</div>
 			</div>
@@ -134,29 +139,29 @@
 											<div class="select-wrap">
 												<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 												<select name="" id="" class="form-control">
-														<option value="">Centre-Ville Tunis</option>
-														<option value="">Ariana</option>
-														<option value="">El-morouj</option>
-														<option value="">Manouba</option>
-														<option value="">Lac2</option>
-														<option value="">El-marsa</option>
-														<option value="">Benzerte</option>
-														<option value="">Sousse</option>
-														<option value="">Monastir</option>
-														<option value="">Sfax</option>
-														<option value="">Nabeul</option>
+													<option value="">Centre-Ville Tunis</option>
+													<option value="">Ariana</option>
+													<option value="">El-morouj</option>
+													<option value="">Manouba</option>
+													<option value="">Lac2</option>
+													<option value="">El-marsa</option>
+													<option value="">Benzerte</option>
+													<option value="">Sousse</option>
+													<option value="">Monastir</option>
+													<option value="">Sfax</option>
+													<option value="">Nabeul</option>
 												</select>
 											</div>
 										</div>
 									</div>
 								</div>
-									<div class="col-lg align-items-end">
+								<div class="col-lg align-items-end">
 									<div class="form-group">
 										<label for="#">Date de depart</label>
 										<div class="form-field">
 											<div class="select-wrap">
 												<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-													<input type="date" class="form-control">												</select>
+												<input type="date" class="form-control">
 											</div>
 										</div>
 									</div>
@@ -164,7 +169,8 @@
 								<div class="col-lg align-self-end">
 									<div class="form-group">
 										<div class="form-field">
-											<a href="pricing.html"><input type="button" value="Recherche une annonce" class="form-control btn btn-primary" onclick="check()"></a>
+											<a href="contact.html"><input type="button" value="Recherche une annonce"
+													class="form-control btn btn-primary"></a>
 										</div>
 									</div>
 								</div>
@@ -188,7 +194,7 @@
 						<h2 class="mb-4">Ensemble, permettons à des millions de personnes de se déplacer.</h2>
 						<span style="color: gray;">Vous prenez le volant ? Dites-nous où vous allez !</span>
 						<br><br>
-						<p><a href="car.html" class="btn btn-primary">Proposez une Annonce</a></p>
+						<p><a href="contact.html" class="btn btn-primary">Proposez une Annonce</a></p>
 					</div>
 				</div>
 			</div>
@@ -258,8 +264,8 @@
 			</div>
 		</div>
 	</section> -->
-<!-- footer -->
-<br><br><br>
+	<!-- footer -->
+	<br><br><br>
 	<footer class="ftco-footer ftco-bg-dark ftco-section">
 		<div class="container">
 			<!-- <div class="row mb-5">
@@ -325,9 +331,9 @@
 						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
 							href="https://colorlib.com" target="_blank">Colorlib</a>
 							 Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-				</div>
-			</div> 
+			</p>
+		</div>
+		</div>
 		</div>
 	</footer>
 
@@ -339,7 +345,7 @@
 			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
 				stroke="#F96D00" /></svg></div>
 
-				<script src="js/inscri.js"></script>
+	<script src="js/inscri.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
