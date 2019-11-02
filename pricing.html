@@ -82,15 +82,15 @@
         <label>sex</label>
       </div>
       <div class="col-md-3">
-        <input class="profil" type="text" placeholder="votre nom"><br>
-        <input class="profil" type="text" placeholder="votre nom"><br>
-        <input class="profil" type="text" placeholder="votre prénom"> <br>
-        <input class="profil" type="number" placeholder="votre numéro"><br>
-        <input class="profil" type="email" placeholder="votre email"><br>
-        <input class="profil" type="date" placeholder="votre date de naissance"><br>
+        <input class="profil" type="text" placeholder="votre nom" id="uname"><br>
+        <input class="profil" type="text" placeholder="votre nom" id="nom"><br>
+        <input class="profil" type="text" placeholder="votre prénom" id ="pre" > <br>
+        <input class="profil" type="number" placeholder="votre numéro" id="num"><br>
+        <input class="profil" type="email" placeholder="votre email" id ="email"><br>
+        <input class="profil" type="date" placeholder="votre date de naissance" id="date"><br>
         <form action="">
-          <input type="radio" name="gender" value="male"> homme<br>
-          <input type="radio" name="gender" value="female"> Femme<br>
+          <input type="radio" name="gender" value="male" id="hom"> homme<br>
+          <input type="radio" name="gender" value="female"id="fem"> Femme<br>
         </form>
       </div>
       <div class="col-md-2">
@@ -101,17 +101,31 @@
         <label>nombre de place</label> <br><br>
         <label>image de voiture</label>
         <input type='file' onchange="voi(this);" />
-        <img id="blahh" src="#" alt="your image" />
+        <img id="blahh" src="#" alt="your image" /><br><br>
+        <input type="submit" class="Submit" value="Valide" onclick="modif()">
+        
+        <input type="submit" class="Submit" value="accepter" onclick="modifp()">
       </div>
       <div class="col-md-2">
-        <input class="profil" type="text"> <br>
-        <input class="profil" type="text"> <br>
-        <input class="profil" type="date"> <br>
-        <input class="profil" type="text"><br>
-        <input class="profil" type="number">
+        <input class="profil" type="text"id="voi"> <br>
+        <input class="profil" type="text" id="mar">  <br>
+        <input class="profil" type="date" id="da"> <br>
+        <input class="profil" type="text" id="op"><br>
+        <input class="profil" type="number" id="num">
+        
+      </div>
+      <div class="container">
+      <div class="col-md-6">
+
+        </div>
+
+               
       </div>
     </div>
   </div>
+
+    
+
   <br><br><br>
   <div id="part1">
   <div class="row mesTrajets">
