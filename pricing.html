@@ -59,8 +59,7 @@
     </div>
   </nav>
   <!-- END nav -->
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/covoiturage2.jpg');"
-    data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/covoiturage2.jpg');" data-stellar-background-ratio="0.5">
     <img src="/images/car-10.jpg">
     <div class="overlay"></div>
     <div class="container">
@@ -79,6 +78,7 @@
     <div id="buttonProfil">
       <input type="button" value="Informations Personnel" id="mesVoitures" onclick="infoPerso()"><br>
       <input type="button" value="Informations Voiture" id="mesVoitures" onclick="infoVoiture()">
+      <input type="button" id="bttModifier" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
     </div>
     <div id="infoProfil">
       <div class="row personnelInfo">
@@ -157,9 +157,9 @@
     <div class="row mesTrajets">
       <div class="col-md-2"></div>
       <div class="col-md-10">
-        <input type="button" id="bttModifier" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
-        <label id="titre1">Mes Trajets</label>
-        <table id="table1"></table>
+        <table id="table1">
+          <label id="titre1">Mes Trajets</label>
+        </table>
       </div><br><br><br><br>
   </section>
   <section id="part2">

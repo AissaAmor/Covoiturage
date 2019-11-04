@@ -68,3 +68,28 @@
         </div>
       </div>
     </div>
+
+
+    js
+
+
+                                    <input type="button" value="Valider" onclick="reservation(${i})" id="bttreserver">
+
+
+
+
+
+
+<tr>       
+                        <td id="bt1"><label id="titre2">Trajet N°${i + 1}</label><br>
+                            <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
+                            <label id="attribut">Destination :${mytable[i].arriveTrajet}</label><br>
+                            <label id="attribut">Date de trajet :${mytable[i].dateTrajet}<br> Prix par passager :${mytable[i].prix}</label><br>
+                            <label id="attribut">Nombre de places : ${mytable[i].place}<br> Climatisation : ${mytable[i].climatisation}</label><br>
+                            <label id="attribut">Tabac : ${mytable[i].fumees}<br> Musique : ${mytable[i].musique}</label>
+                        </td>
+                        <td>
+                            <input type="button" value="Modifier" id="btt1" onclick="importAnnonce(${i})">
+                            <input type="button" value="Delete"id="btt1" onclick='deleteAnnonce(${mytable[i].id})'>
+                            </td>
+                            </tr>
