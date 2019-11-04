@@ -45,20 +45,20 @@ function modif() {
 }
 function modifp() {
     var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
-    var    user= JSON.parse(localStorage.getItem('User')) || []
+    var user = JSON.parse(localStorage.getItem('User')) || []
     var tabUser = {
-        username:document.getElementById('uname').value,
-        nom:document.getElementById('nom').value,
-        prenm:document.getElementById('pre').value,
-        nume:document.getElementById('num').value,
-        email:document.getElementById('email').value,
-        dat:document.getElementById('date').value,
-        id:user.id
+        username: document.getElementById('uname').value,
+        nom: document.getElementById('nom').value,
+        prenm: document.getElementById('pre').value,
+        nume: document.getElementById('num').value,
+        email: document.getElementById('email').value,
+        dat: document.getElementById('date').value,
+        id: user.id
     }
     console.log(tabUser.id);
     for (let i = 0; i < user.length; i++) {
         if (user[i].id == loggedin.id) {
-            user.splice(i,1,tabUser);
+            user.splice(i, 1, tabUser);
             console.log(i);
             localStorage.setItem('User', JSON.stringify(user));
             console.log(user);

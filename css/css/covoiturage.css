@@ -76,7 +76,7 @@
 }
 #attribut{
     color: rgb(0, 0, 0);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
 }
 #part2{
@@ -90,8 +90,47 @@
     margin-left:600px;
     border: none;
     cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+    color: white;
+  }
+#btt2 {
+    background-color: #F7B71D;
+    padding: 16px 20px;
+    margin: 8px 0;
+    margin-left:60px;
+    border: none;
+    cursor: pointer;
     width: 10%;
     opacity: 0.9;
+    color: white;
+  }
+#bttreserver {
+    background-color: #FB973D;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    color: white;
+  }
+#mesVoitures {
+    background-color: #F7B71D;
+    padding: 16px 10px;
+    margin-left:100px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    color: white;
+  }
+#bttAnnonce {
+    background-color: #F7B71D;
+    padding: 16px 10px;
+    margin-left:100px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    width: 50%;
     color: white;
   }
   #bt1{
@@ -106,4 +145,31 @@
 #loggedU { 
     padding-left: 20px;
     color: #ffffff;
+}
+#destination{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 25px;
+    color: brown;
+}
+#profilTitre{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:50px;
+    color: rgb(247, 70, 0);
+    margin-left: 600px;
+}
+#voitureTitre{
+    font-family: unset;
+    font-size:30px;
+    color: rgb(0, 0, 0);
+    margin-left: 50px;
+}
+#personelTitre{
+    font-family: unset;
+    font-size:30px;
+    color: rgb(0, 0, 0);
+    margin-left: 300px;
+}
+
+#attribut{
+    width: 460px;
 }
