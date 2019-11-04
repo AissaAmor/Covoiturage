@@ -115,18 +115,18 @@
 										<div class="form-field">
 											<div class="select-wrap">
 												<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-												<select name="" id="" class="form-control">
-													<option value="">Centre-Ville Tunis</option>
-													<option value="">Ariana</option>
-													<option value="">El-morouj</option>
-													<option value="">Manouba</option>
-													<option value="">Lac2</option>
-													<option value="">El-marsa</option>
-													<option value="">Benzerte</option>
-													<option value="">Sousse</option>
-													<option value="">Monastir</option>
-													<option value="">Sfax</option>
-													<option value="">Nabeul</option>
+												<select id="listVille" class="form-control">
+													<option value="Centre-Ville Tunis">Centre-Ville Tunis</option>
+													<option value="Ariana">Ariana</option>
+													<option value="El-morouj">El-morouj</option>
+													<option value="Manouba">Manouba</option>
+													<option value="Lac2">Lac2</option>
+													<option value="El-marsa">El-marsa</option>
+													<option value="Benzerte">Benzerte</option>
+													<option value="Sousse">Sousse</option>
+													<option value="Monastir">Monastir</option>
+													<option value="Sfax">Sfax</option>
+													<option value="Nabeul">Nabeul</option>
 												</select>
 											</div>
 										</div>
@@ -138,18 +138,18 @@
 										<div class="form-field">
 											<div class="select-wrap">
 												<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-												<select name="" id="" class="form-control">
-													<option value="">Centre-Ville Tunis</option>
-													<option value="">Ariana</option>
-													<option value="">El-morouj</option>
-													<option value="">Manouba</option>
-													<option value="">Lac2</option>
-													<option value="">El-marsa</option>
-													<option value="">Benzerte</option>
-													<option value="">Sousse</option>
-													<option value="">Monastir</option>
-													<option value="">Sfax</option>
-													<option value="">Nabeul</option>
+												<select id="listVille1" class="form-control">
+													<option value="Centre-Ville Tunis">Centre-Ville Tunis</option>
+													<option value="Ariana">Ariana</option>
+													<option value="El-morouj">El-morouj</option>
+													<option value="Manouba">Manouba</option>
+													<option value="Lac2">Lac2</option>
+													<option value="El-marsa">El-marsa</option>
+													<option value="Benzerte">Benzerte</option>
+													<option value="Sousse">Sousse</option>
+													<option value="Monastir">Monastir</option>
+													<option value="Sfax">Sfax</option>
+													<option value="Nabeul">Nabeul</option>
 												</select>
 											</div>
 										</div>
@@ -161,7 +161,7 @@
 										<div class="form-field">
 											<div class="select-wrap">
 												<div class="icon"><span class="ion-ios-arrow-down"></span></div>
-												<input type="date" class="form-control">
+												<input type="date" class="form-control" id="dateTrip">
 											</div>
 										</div>
 									</div>
@@ -169,14 +169,24 @@
 								<div class="col-lg align-self-end">
 									<div class="form-group">
 										<div class="form-field">
-											<a href="contact.html"><input type="button" value="Recherche une annonce"
-													class="form-control btn btn-primary"></a>
+											<input type="button" value="Recherche une annonce"
+												class="form-control btn btn-primary" onclick="rechercheAnnonce()">
 										</div>
 									</div>
 								</div>
 							</div>
 						</form>
 					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row recherche">
+			<div class="col-md-2"></div>
+			<div class="col-md-7">
+				<table id="rechAnnonce"></table>
+			</div>
+			<div class="col-md-3">
+				<div id="nbreReserver">
 				</div>
 			</div>
 		</div>
@@ -364,6 +374,7 @@
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
 	<script src="js/google-map.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/annonce.js"></script>
 
 </body>
 

@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/css/covoiturage.css">
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -57,7 +59,9 @@
     </div>
   </nav>
   <!-- END nav -->
-  <section class="hero-wrap hero-wrap-2 js-fullheight" data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/covoiturage2.jpg');"
+    data-stellar-background-ratio="0.5">
+    <img src="/images/car-10.jpg">
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -69,78 +73,86 @@
       </div>
     </div>
   </section>
-  <div class="container">
-    <br><br>
-    <h3>Modifier vos informations</h3><br><br>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <br>Profil:
-        <input type='file' onchange="readURL(this);" class="button button4" />
-        <img id="blah" src="#" alt="your image" style="border:1px solid black;" />
-        <img src="images/f_acc1.jpg" name="avatar" id="avatar" style="border:1px solid black;">
-        <form method="post" name="formulairecompte" enctype="multipart/form-data" action="testupload.html">
-          <input name="fichier" type="file" onchange="verifPoids_redimentionimage(this)">
-      </div>
-      <div class="col-md-1">
-        <label>username</label><br><br>
-        <label>nom</label><br><br>
-        <label>prénom</label><br><br>
-        <label>télephone</label><br><br>
-        <label>email</label><br><br>
-        <label>date </label><br><br>
-        <label>sex</label>
-      </div>
-      <div class="col-md-3">
-        <input class="profil" type="text" placeholder="votre nom" id="uname"><br>
-        <input class="profil" type="text" placeholder="votre nom" id="nom"><br>
-        <input class="profil" type="text" placeholder="votre prénom" id="pre"> <br>
-        <input class="profil" type="number" placeholder="votre numéro" id="num"><br>
-        <input class="profil" type="email" placeholder="votre email" id="email"><br>
-        <input class="profil" type="date" placeholder="votre date de naissance" id="date"><br>
-        <form action="">
-          <input type="radio" name="gender" value="male" id="hom"> homme<br>
-          <input type="radio" name="gender" value="female" id="fem"> Femme<br>
-        </form>
-      </div>
-      <div class="col-md-2">
-        <label>Ma voiture:</label> <br><br>
-        <label>marque</label> <br><br>
-        <label>date de permis</label> <br><br>
-        <label>option</label> <br><br>
-        <label>nombre de place</label> <br><br>
-        <label>image de voiture</label>
-        <input type='file' onchange="voi(this);" />
-        <img id="blahh" src="#" alt="your image" /><br><br>
-        <input type="submit" class="Submit" value="Valide" onclick="modif()">
-
-        <input type="submit" class="Submit" value="accepter" onclick="modifp()">
-      </div>
-      <div class="col-md-2">
-        <input class="profil" type="text" id="voi"> <br>
-        <input class="profil" type="text" id="mar"> <br>
-        <input class="profil" type="date" id="da"> <br>
-        <input class="profil" type="text" id="op"><br>
-        <input class="profil" type="number" id="num">
-
-      </div>
-      <div class="container">
-        <div class="col-md-6">
-
+  <br><br><br>
+  <section>
+    <p id="profilTitre">Modifier votre profil</p><br>
+    <div id="buttonProfil">
+      <input type="button" value="Informations Personnel" id="mesVoitures" onclick="infoPerso()"><br>
+      <input type="button" value="Informations Voiture" id="mesVoitures" onclick="infoVoiture()">
+    </div>
+    <div id="infoProfil">
+      <div class="row personnelInfo">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <input type='file' onchange="readURL(this);" class="button button4" />
+          <img id="blah" src="#" alt="your image" style="border:1px solid black;" />
+          <!-- <img src="images/f_acc1.jpg" name="avatar" id="avatar" style="border:1px solid black;"> -->
+          <!-- <form method="post" name="formulairecompte" enctype="multipart/form-data" action="testupload.html"> -->
+          <!-- <input name="fichier" type="file" onchange="verifPoids_redimentionimage(this)"> -->
         </div>
+        <div class="col-md-1">
+          <label>username</label><br><br>
+          <label>nom</label><br><br>
+          <label>prénom</label><br><br>
+          <label>télephone</label><br><br>
+          <label>email</label><br><br>
+          <label>date </label><br><br>
+          <label>sex</label>
+        </div>
+        <div class="col-md-3">
+          <input class="profil" type="text" placeholder="votre nom" id="uname"><br>
+          <input class="profil" type="text" placeholder="votre nom" id="nom"><br>
+          <input class="profil" type="text" placeholder="votre prénom" id="pre"> <br>
+          <input class="profil" type="number" placeholder="votre numéro" id="num"><br>
+          <input class="profil" type="email" placeholder="votre email" id="email"><br>
+          <input class="profil" type="date" placeholder="votre date de naissance" id="date"><br>
+          <form action="">
+            <input type="radio" name="gender" value="male" id="hom"> homme<br>
+            <input type="radio" name="gender" value="female" id="fem"> Femme<br><br><br>
+          </form>
+        </div>
+      </div>
+      <input type="button" value="Modifier" id="btt1" onclick="modif()">
+      <input type="button" value="Valider" id="btt2" onclick="modifp() ">
+      <a href="pricing.html"><input type="button" value="Retour" id="btt2"></a>
+    </div>
+    <div id="infoVoiture">
+        <p id="voitureTitre">Informations Voiture</p><br>
+        <table id="tableVoiture"></table>
+        <div id="ajoutVoiture">
+          <div id="voitureButton">
+            <br><br><br>
+          </div>
+          <div class="row voiture">
+            <div class="col-md-3">
+              <label>Marque:</label> <br><br>
+              <label>Modele</label> <br><br>
+              <label>date permis</label> <br>
+              <label>nombre place</label> <br><br><br>
+              <label>IMG voiture</label>
+              <input type='file' onchange="voi(this);" />
+              <img id="blahh" src="#" alt="your image" /><br><br>
+            </div>
+            <div class="col-md-2">
+              <input class="profil" type="text" id="voi"> <br>
+              <input class="profil" type="text" id="mar"> <br>
+              <input class="profil" type="date" id="da"> <br>
+              <input class="profil" type="number" id="num">
 
-
+            </div>
+          </div>
+          <input type="button" id="mesVoitures" value="Ajout Voiture" onclick="ajoutVoiture()">
+        </div>
+        <div id="voitureBtt">
+          <input type="button" id="mesVoitures" value="Mes Voitures" onclick="afficheVoiture()">
+          <input type="button" id="mesVoitures" value="Ajout Voiture" onclick="ajoutVoiture()">
+        </div>
       </div>
     </div>
-  </div>
 
-
-
-  <br><br><br>
-
-
-
+    </div>
+  </section>
+  <br><br>
   <section id="part1">
     <div class="row mesTrajets">
       <div class="col-md-2"></div>
@@ -151,6 +163,10 @@
       </div><br><br><br><br>
   </section>
   <section id="part2">
+    <div class="row trajetTitre">
+      <div class="col-md-3"></div>
+      <div id="destination"></div><br><br>
+    </div>
     <div class="row modifierTrajet">
       <div class="col-md-2"></div>
       <div class="col-md-2">
