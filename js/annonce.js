@@ -119,50 +119,122 @@ function editAnnonce(pos) {
 // recherche/Reservez Annonce//
 
 
+// function rechercheAnnonce() {
+//     var mytable = JSON.parse(localStorage.getItem('table'));
+//     var lieuD = document.getElementById('listVille').value;
+//     var Arrive = document.getElementById('listVille1').value;
+//     var html = ``
+//     for (let i = 0; i < mytable.length; i++) {
+//         if ((lieuD == mytable[i].departTrajet) && (Arrive == mytable[i].arriveTrajet)) {
+
+//             html += `<tr>
+//                             <td id="colTrajet">
+//                                 <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
+//                                 <label id="attribut">Destination :${mytable[i].arriveTrajet}</label><br>
+//                                 <label id="attribut">Date de trajet :${mytable[i].dateTrajet}<br> 
+//                                 <label id="attribut">Prix par passager :${mytable[i].prix}</label><br>
+//                                 <label id="attribut">Nombre de places : ${mytable[i].place}<br> 
+//                                 <label id="attribut">Climatisation : ${mytable[i].climatisation}</label><br>
+//                                 <label id="attribut">Tabac : ${mytable[i].fumees}<br> 
+//                                 <label id="attribut">Musique : ${mytable[i].musique}</label>
+//                             </td>
+//                             <td id="colTrajet">
+//                                 <input type="button" value="Reserver" id="bttAnnonce" onclick="reservation(${i})">
+//                             </td>
+//                          </tr>`
+//         } else if ((Arrive == mytable[i].arriveTrajet) || (lieuD == mytable[i].departTrajet)) {
+//             html += `<tr>
+//                             <td id="colTrajet">
+//                                 <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
+//                                 <label id="attribut">Destination :${mytable[i].arriveTrajet}</label><br>
+//                                 <label id="attribut">Date de trajet :${mytable[i].dateTrajet}<br> 
+//                                 <label id="attribut">Prix par passager :${mytable[i].prix}</label><br>
+//                                 <label id="attribut">Nombre de places : ${mytable[i].place}<br> 
+//                                 <label id="attribut">Climatisation : ${mytable[i].climatisation}</label><br>
+//                                 <label id="attribut">Tabac : ${mytable[i].fumees}<br> 
+//                                 <label id="attribut">Musique : ${mytable[i].musique}</label>
+//                             </td>
+//                             <td id="colTrajet">
+//                                 <input type="button" value="Reserver" id="bttAnnonce" onclick="reservation(${i})">
+//                             </td>
+//                          </tr>`
+//         }
+
+//         document.getElementById('rechAnnonce').innerHTML = html;
+//     }
+// }
+                                    // new affiche // 
 function rechercheAnnonce() {
     var mytable = JSON.parse(localStorage.getItem('table'));
     var lieuD = document.getElementById('listVille').value;
     var Arrive = document.getElementById('listVille1').value;
-    var html = ``
+    var html = ``;
     for (let i = 0; i < mytable.length; i++) {
         if ((lieuD == mytable[i].departTrajet) && (Arrive == mytable[i].arriveTrajet)) {
+           
+            html += `<div class="row">
+            <div class="col-md-3" >
+            <div class="car-wrap ftco-animate">
+                <div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+                    <div class="price-wrap d-flex">
+                        <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
+                        <p class="from-day">
+                            <span></span>
+                            <span>Prix</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="text p-4 text-center">
+                    <h6 class="mb-0"><a>lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
 
-            html += `<tr>
-                            <td id="colTrajet">
-                                <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
-                                <label id="attribut">Destination :${mytable[i].arriveTrajet}</label><br>
-                                <label id="attribut">Date de trajet :${mytable[i].dateTrajet}<br> 
-                                <label id="attribut">Prix par passager :${mytable[i].prix}</label><br>
-                                <label id="attribut">Nombre de places : ${mytable[i].place}<br> 
-                                <label id="attribut">Climatisation : ${mytable[i].climatisation}</label><br>
-                                <label id="attribut">Tabac : ${mytable[i].fumees}<br> 
-                                <label id="attribut">Musique : ${mytable[i].musique}</label>
-                            </td>
-                            <td id="colTrajet">
-                                <input type="button" value="Reserver" id="bttAnnonce" onclick="reservation(${i})">
-                            </td>
-                         </tr>`
-        } else if ((Arrive == mytable[i].arriveTrajet) || (lieuD == mytable[i].departTrajet)) {
-            html += `<tr>
-                            <td id="colTrajet">
-                                <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
-                                <label id="attribut">Destination :${mytable[i].arriveTrajet}</label><br>
-                                <label id="attribut">Date de trajet :${mytable[i].dateTrajet}<br> 
-                                <label id="attribut">Prix par passager :${mytable[i].prix}</label><br>
-                                <label id="attribut">Nombre de places : ${mytable[i].place}<br> 
-                                <label id="attribut">Climatisation : ${mytable[i].climatisation}</label><br>
-                                <label id="attribut">Tabac : ${mytable[i].fumees}<br> 
-                                <label id="attribut">Musique : ${mytable[i].musique}</label>
-                            </td>
-                            <td id="colTrajet">
-                                <input type="button" value="Reserver" id="bttAnnonce" onclick="reservation(${i})">
-                            </td>
-                         </tr>`
+                    <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
+                       <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
+                       <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
+                       
+
+
+                    <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
+                         <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+                </div>
+            </div>
+        </div>
+        </div>`
         }
-
-        document.getElementById('rechAnnonce').innerHTML = html;
+         
+        else if ((Arrive == mytable[i].arriveTrajet) || (lieuD == mytable[i].departTrajet)) {
+            html += `<div class="row">
+                    <div class="col-md-3">
+                        <div class="car-wrap ftco-animate">
+                            <div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+                                <div class="price-wrap d-flex">
+                                    <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
+                                    <p class="from-day">
+                                        <span></span>
+                                        <span>Prix</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="text p-4 text-center">
+                                <h6 class="mb-0"><a >lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
+            
+                                <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
+                                   <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
+                                   <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
+                                   
+            
+                                   
+                                   <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
+                                   <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+                                   </div>
+                                   </div>
+                                   </div>
+                                   </div>`
+        }
+         
+        document.getElementById('rechAnn').innerHTML = html;
     }
 }
+
 function validNbrePLaces() {
     var resAnnonce = document.getElementById('reservation').value;
     if (resAnnonce < 0) {
@@ -172,7 +244,7 @@ function validNbrePLaces() {
     document.getElementById("messageErreur").innerHTML = "";
     return true;
 }
-function afficheNbrePlace(){
+function afficheNbrePlace() {
     var html = ``;
     html += ` <input type="number" placeholder="Nombre des places" id="reservation" onblur="validNbrePLaces()"><br>
               <span id="messageErreur" style="color: red;"> </span><br>
@@ -183,13 +255,13 @@ function reservation(pos) {
     var mytable = JSON.parse(localStorage.getItem('table'));
     // var resAnnonce = document.getElementById('reservation').value;
     var reserver = JSON.parse(localStorage.getItem('Reservation'));
-        if (reserver == null) {
-            reserver = []
-        }
-        console.log(mytable[pos]);
-        reserver.push(mytable[pos]);
-        localStorage.setItem('Reservation', JSON.stringify(reserver));
-  }
+    if (reserver == null) {
+        reserver = []
+    }
+    console.log(mytable[pos]);
+    reserver.push(mytable[pos]);
+    localStorage.setItem('Reservation', JSON.stringify(reserver));
+}
 
 //  ajouter/supprimer/modifier Voiture //
 

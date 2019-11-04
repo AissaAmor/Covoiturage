@@ -215,7 +215,8 @@ function check() {
         
         }
         else if(User[i].Etat.match("Inactive")) {
-               location.href="#";
+            location.href="#";
+            document.getElementById("bloq").innerHTML="votre compte a été désactivé";
              } 
         else if (userName.value == User[i].userName && userPw.value == User[i].password) {
                  

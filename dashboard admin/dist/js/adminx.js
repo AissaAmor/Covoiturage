@@ -26,7 +26,7 @@ function affichUser() {
     <th scope="col">TELEPHONE</th>
     <th scope="col">ADRESSE</th>
     <th scope="col">Sexe</th>
-    <th scope="col">Role</th> 
+    <th scope="col">Etat</th> 
     <th scope="col">Actions</th>
   </tr>
   </thead>`;
@@ -95,8 +95,91 @@ function active(pos) {
 
 function afficheNombreDeCompte() { 
   var nb = JSON.parse(localStorage.getItem('User')) || [] 
+  var nbAnnonce = JSON.parse(localStorage.getItem('table')) || [] 
+
+  var lengthAnn = nbAnnonce.length; 
   var length = nb.length; 
   console.log(length); 
-  document.getElementById('nbr').innerHTML = length; 
+  console.log(nbAnnonce);
+  document.getElementById('nbr').innerHTML = length;
+  document.getElementById('nbrAnn').innerHTML = lengthAnn;
+
+} 
+
+function affichAnnonce() { 
+  var ann = JSON.parse(localStorage.getItem('table')) || []
+ 
+
+  var html = `  <thead>
+   <tr>
+  <th scope="col">
+    <label class="custom-control custom-checkbox m-0 p-0">
+      <input type="checkbox" class="custom-control-input table-select-all">
+      <span class="custom-control-indicator"></span>
+    </label>
+  </th>
+  <th scope="col">ID</th>
+  <th scope="col">IDUSER</th>
+  <th scope="col">Départ</th>
+  <th scope="col">Arrivée</th>
+  <th scope="col">Date</th>
+  <th scope="col">place disponible</th>
+  <th scope="col">Prix</th>
+  <th scope="col">Commentaire</th>
+  <th scope="col">Actions</th>
+</tr>
+</thead>`;
+
+  for (let i = 0; i < ann.length; i++) {
+          html += ` <tbody>
+          <tr>
+            <!-- <th scope="row">
+              <label class="custom-control custom-checkbox m-0 p-0">
+                <input type="checkbox" class="custom-control-input table-select-row">
+                <span class="custom-control-indicator"></span>
+              </label>
+            </th> -->
+            <td></td>
+            <td>${ann[i].id}</td>
+            <td>${ann[i].iduser}</td>
+            <td>${ann[i].departTrajet}</td>
+            <td>${ann[i].arriveTrajet}</td>
+            <td>${ann[i].dateTrajet}</td>
+            <td>${ann[i].place}</td>
+            <td>${ann[i].prix}</td>
+            <td>${ann[i].commentaire}</td>
+            
+            
+            <td>
+           
+              <button class="btn btn-sm btn-danger" onclick='deleteAnnonce(${ann[i].id})'>Delete</button>
+            </td>
+          </tr>
+          </tbody>`
+          
+      
+
+  //     <td> <input type="button" onclick='editelem(${i})'value="edit" id="identities1"> <br> 
+  //     <input type="button" onclick='deleteTask(${todoTable[i].id})' value="Delete" id="identities2"></td>
+      
+  //     </td>
+  // </tr>`
+      
+  }
+
+  console.log(html);
+
+  document.getElementById('tableAnn').innerHTML = html;
+
+
+} 
+function deleteAnnonce(idAN) { 
+  var ann = JSON.parse(localStorage.getItem('table'))
+    console.log(ann) ;
+    for(let i = 0 ; i<ann.length ; i++) { 
+        if(idAN==ann[i].id) {
+    ann.splice(i, 1); }} 
+    localStorage.setItem('table', JSON.stringify(ann));
+    this.affichAnnonce()
 
 }
