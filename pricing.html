@@ -65,7 +65,7 @@
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-        <div class="col-md-9 ftco-animate pb-5">
+        <div class="col-md-9 ftco-animate pb-5"></div>
           <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
                   class="ion-ios-arrow-forward"></i></a></span>
             <h1 class="mb-3 bread">...</h1>
@@ -78,7 +78,9 @@
     <p id="profilTitre">Modifier votre profil</p><br>
     <div id="buttonProfil">
       <input type="button" value="Informations Personnel" id="mesVoitures" onclick="infoPerso()"><br>
+      
       <input type="button" value="Informations Voiture" id="mesVoitures" onclick="infoVoiture()">
+      <input type="button" id="mesVoitures" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
     </div>
     <div id="infoProfil">
       <div class="row personnelInfo">
@@ -154,11 +156,11 @@
   </section>
   <br><br>
   <section id="part1">
-    <div class="row mesTrajets">
+    <div class="row mesTrajets"> 
       <div class="col-md-2"></div>
       <div class="col-md-10">
-        <input type="button" id="bttModifier" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
-        <label id="titre1">Mes Trajets</label>
+       
+    
         <table id="table1"></table>
       </div><br><br><br><br>
   </section>
