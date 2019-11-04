@@ -45,11 +45,7 @@ function modif() {
 }
 function modifp() {
     var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
-<<<<<<< HEAD
     var   user = JSON.parse(localStorage.getItem('User')) || []
-=======
-    var    user= JSON.parse(localStorage.getItem('User')) || []
->>>>>>> refs/remotes/origin/master
     var tabUser = {
         username:document.getElementById('uname').value,
         nom:document.getElementById('nom').value,
