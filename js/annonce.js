@@ -49,137 +49,33 @@ function afficheAnnonceProfil() {
     document.getElementById('part1').style.display = 'block';
     var mytable = JSON.parse(localStorage.getItem('table'));
     var connectedUser = JSON.parse(localStorage.getItem("loggedUser"));
+    var reserver = JSON.parse(localStorage.getItem('Reservation'));
     var html = ``;
-    document.getElementById('titre1').innerHTML = 'Mes Trajets';
-    for (i = 0; i < mytable.length; i++) {
-        if (mytable[i].iduser == connectedUser.id) {
-            html += `	<table class="table">
-            <thead class="thead-primary">
-                <tr class="text-center">
-                    <th>&nbsp;</th>
-                    <th>&nbsp;</th>
-                    <th class="bg-primary heading">Per Hour Rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="">
-                    <td class="car-image">
-                        <div class="img" style="background-image:url(images/car-1.jpg);"></div>
-                    </td>
-                    <td class="product-name">
-                        <h3>Cheverolet SUV Car</h3>
-                    </td>
-                    <td class="price">
-                        <p class="btn-custom"><a href="#">Rent a car</a></p>
-                        <div class="price-rate">
-                            <h3>
-                                <span class="num"><small class="currency">$</small> 10.99</span>
-                                <span class="per">/per hour</span>
-                            </h3>
-                            <span class="subheading">$3/hour fuel surcharges</span>
-                        </div>
-                    </td>
-                </tr><!-- END TR-->
-                <tr class="">
-                    <td class="car-image">
-                        <div class="img" style="background-image:url(images/car-2.jpg);"></div>
-                    </td>
-                    <td class="product-name">
-                        <h3>Cheverolet SUV Car</h3>
-                    </td>
-                    <td class="price">
-                        <p class="btn-custom"><a href="#">Rent a car</a></p>
-                        <div class="price-rate">
-                            <h3>
-                                <span class="num"><small class="currency">$</small> 10.99</span>
-                                <span class="per">/per hour</span>
-                            </h3>
-                            <span class="subheading">$3/hour fuel surcharges</span>
-                        </div>
-                    </td>
-                </tr><!-- END TR-->
-                <tr class="">
-                    <td class="car-image">
-                        <div class="img" style="background-image:url(images/car-3.jpg);"></div>
-                    </td>
-                    <td class="product-name">
-                        <h3>Cheverolet SUV Car</h3>
-                    </td>
-                    <td class="price">
-                        <p class="btn-custom"><a href="#">Rent a car</a></p>
-                        <div class="price-rate">
-                            <h3>
-                                <span class="num"><small class="currency">$</small> 10.99</span>
-                                <span class="per">/per hour</span>
-                            </h3>
-                            <span class="subheading">$3/hour fuel surcharges</span>
-                        </div>
-                    </td>
-                </tr><!-- END TR-->
-                <tr class="">
-                    <td class="car-image">
-                        <div class="img" style="background-image:url(images/car-4.jpg);"></div>
-                    </td>
-                    <td class="product-name">
-                        <h3>Cheverolet SUV Car</h3>
-                    </td>
-                    <td class="price">
-                        <p class="btn-custom"><a href="#">Rent a car</a></p>
-                        <div class="price-rate">
-                            <h3>
-                                <span class="num"><small class="currency">$</small> 10.99</span>
-                                <span class="per">/per hour</span>
-                            </h3>
-                            <span class="subheading">$3/hour fuel surcharges</span>
-                        </div>
-                    </td>
-                </tr><!-- END TR-->
-                <tr class="">
-                    <td class="car-image">
-                        <div class="img" style="background-image:url(images/car-5.jpg);"></div>
-                    </td>
-                    <td class="product-name">
-                        <h3>Cheverolet SUV Car</h3>
-
-                    </td>
-
-                    <td class="price">
-                        <p class="btn-custom"><a href="#">Rent a car</a></p>
-                        <div class="price-rate">
-                            <h3>
-                                <span class="num"><small class="currency">$</small> 10.99</span>
-                                <span class="per">/per hour</span>
-                            </h3>
-                            <span class="subheading">$3/hour fuel surcharges</span>
-                        </div>
-                    </td>
-                </tr><!-- END TR-->
-                <tr class="">
-                    <td class="car-image">
-                        <div class="img" style="background-image:url(images/car-6.jpg);"></div>
-                    </td>
-                    <td class="product-name">
-                        <h3>Cheverolet SUV Car</h3>
-
-                    </td>
-
-                    <td class="price">
-                        <p class="btn-custom"><a href="#">Rent a car</a></p>
-                        <div class="price-rate">
-                            <h3>
-                                <span class="num"><small class="currency">$</small> 10.99</span>
-                                <span class="per">/per hour</span>
-                            </h3>
-                            <span class="subheading">$3/hour fuel surcharges</span>
-                        </div>
-                    </td>
-                </tr><!-- END TR-->
-            </tbody>
-        </table>`
-            // console.log(mytable[i].id);
+    for (let i = 0; i < reserver.length; i++) {
+        console.log(reserver[i].idUser)
+        console.log(connectedUser.id)
+        if (reserver[i].idUser == connectedUser.id) {
+            for (let j = 0; j < mytable.length; i++) {
+                if (reserver[j].id == mytable[j].id) {
+                    html += `<tr>       
+                                <td id="bt1"><label id="titre2">Trajet N°${i + 1}</label><br>
+                                     <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
+                                     <label id="attribut">Destination :${mytable[i].arriveTrajet}</label><br>
+                                     <label id="attribut">Date de trajet :${mytable[i].dateTrajet}<br> Prix par passager :${mytable[i].prix}</label><br>
+                                     <label id="attribut">Nombre de places : ${mytable[i].place}<br> Climatisation : ${mytable[i].climatisation}</label><br>
+                                     <label id="attribut">Tabac : ${mytable[i].fumees}<br> Musique : ${mytable[i].musique}</label>
+                                </td>
+                                <td>
+                                    <input type="button" value="Modifier" id="btt1" onclick="importAnnonce(${i})">
+                                    <input type="button" value="Delete"id="btt1" onclick='deleteAnnonce(${mytable[i].id})'>
+                                 </td>
+                            </tr>`
+                    // console.log(mytable[i].id);
+                }
+            }
         }
     }
-    document.getElementsByID('table1').innerHTML = html;
+    document.getElementById('table1').innerHTML = html;
 }
 function deleteAnnonce(idAnnonce) {
     var mytable = JSON.parse(localStorage.getItem('table'));
@@ -271,6 +167,7 @@ function rechercheAnnonce() {
                                 <input type="number" placeholder="Places reservez?" id="reservationNumber" onblur="validNbrePLaces()"><br>
                                 <span id="messageErreur"> </span><br>
                                 <input type="button" value="Reserver" class="btn-custom" onclick="reservation(${i})">
+                                <span id="reservationComplet"></span>
                             </td>
                          </tr>`
         }
@@ -300,30 +197,91 @@ function reservation(pos) {
     var mytable = JSON.parse(localStorage.getItem('table'));
     // var resAnnonce = document.getElementById('reservation').value;
     var reserver = JSON.parse(localStorage.getItem('Reservation'));
-    var connectedUser=JSON.parse(localStorage.getItem('loggedUser'));
-    var resAnnonce = document.getElementById('reservationNumber').value;
-        if (reserver == null) {
-            reserver = []
-        }
-        console.log(mytable[pos].iduser);
-        console.log(connectedUser.id);
-        console.log(resAnnonce);
-        if (mytable[pos].iduser == connectedUser.id) {
-            if(resAnnonce < mytable[pos].place) {
-                mytable[pos].place -=resAnnonce;
-                console.log(mytable[pos].place);
-                console.log(mytable[pos]);
-                reserver.push(mytable[pos]);
-                localStorage.setItem('Reservation', JSON.stringify(reserver));
+    var connectedUser = JSON.parse(localStorage.getItem('loggedUser'));
+    if (reserver == null) {
+        reserver = []
+        for (let i = 0; i < mytable.length; i++) {
+            mytable[pos].place -- ;
+            tabReserve = {
+                idReserve: Math.floor((Math.random() * 1000) + 1),
+                id: mytable[pos].id,
+                idUser: connectedUser.id
             }
+            reserver.push(tabReserve);
+        localStorage.setItem('Reservation', JSON.stringify(reserver));
+        localStorage.setItem('table', JSON.stringify(mytable));
+        document.getElementById("reservationComplet").innerHTML = "";
         }
     }
+}   
+    console.log(connectedUser.id);
+    // if (resAnnonce <= mytable[pos].place) {
+    // var test = false;
+    // for (let i = 0; i < reserver.length; i++) {
+    //     if (reserver[i].idUser == connectedUser.id) {
+    //         test = true;
+    //         position = i;
+    //         break;
+    //     }
+    //     // var res = reserver[i].idReserve;
+    //     //     mytable[pos].place -= resAnnonce;
+    //     //     tabReserve = {
+    //     //         idReserve: res,
+    //     //         id: mytable[pos].id,
+    //     //         idUser: connectedUser.id
+    //     //     }
+    //     //     reserver.splice(i, 1, tabReserve);
+    //     //     localStorage.setItem('Reservation', JSON.stringify(reserver));
+    //     //     localStorage.setItem('table', JSON.stringify(mytable));
+    //     // }
+    // }
+    // console.log(position);
+    // if ((test == true) && (resAnnonce <= mytable[pos].place)) {
+    //     var res = reserver[position].idReserve;
+    //     console.log(res)
+    //     // var nbreReserver = 0;
+    //     // nbreReserver += resAnnonce;
+    //     mytable[pos].place -= resAnnonce;
+    //     tabReserve = {
+    //         idReserve: res,
+    //         id: mytable[pos].id,
+    //         idUser: connectedUser.id
+    //         // nbrePlaces:nbreReserver
+    //     }
+    //     reserver.splice(position, 1, tabReserve);
+    //     localStorage.setItem('Reservation', JSON.stringify(reserver));
+    //     localStorage.setItem('table', JSON.stringify(mytable));
+    //     document.getElementById("reservationComplet").innerHTML = "";
+    // } else if ((test = true) || (resAnnonce <= mytable[pos].place)) {
+    //     mytable[pos].place -= resAnnonce;
+    //     // var nbreReserver = 0;
+    //     // nbreReserver += resAnnonce;
+    //     console.log(mytable[pos].place);
+    //     tabReserve = {
+    //         idReserve: Math.floor((Math.random() * 1000) + 1),
+    //         id: mytable[pos].id,
+    //         idUser: connectedUser.id,
+    //         // nbrePlaces = nbreReserver
+    //     }
+    //     reserver.push(tabReserve);
+    //     localStorage.setItem('Reservation', JSON.stringify(reserver));
+    //     localStorage.setItem('table', JSON.stringify(mytable));
+    //     document.getElementById("reservationComplet").innerHTML = "";
+    // }
+    // else {
+    // document.getElementById("reservationComplet").innerHTML = "Annonce Complet";
+    // }
 
-        // }else{
-        //         location.href="index.html";
-        //     }
+    this.reservation();
 
-  
+}
+
+
+// }else{
+//         location.href="index.html";
+//     }
+
+
 
 //  ajouter/supprimer/modifier Voiture //
 

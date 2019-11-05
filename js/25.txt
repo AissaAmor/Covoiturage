@@ -93,3 +93,67 @@
                             <input type="button" value="Delete"id="btt1" onclick='deleteAnnonce(${mytable[i].id})'>
                             </td>
                             </tr>
+
+
+
+
+                            reservation
+
+
+                            // console.log(connectedUser.id);
+    // if (resAnnonce <= mytable[pos].place) {
+    // var test = false;
+    // for (let i = 0; i < reserver.length; i++) {
+    //     if (reserver[i].idUser == connectedUser.id) {
+    //         test = true;
+    //         position = i;
+    //         break;
+    //     }
+    //     // var res = reserver[i].idReserve;
+    //     //     mytable[pos].place -= resAnnonce;
+    //     //     tabReserve = {
+    //     //         idReserve: res,
+    //     //         id: mytable[pos].id,
+    //     //         idUser: connectedUser.id
+    //     //     }
+    //     //     reserver.splice(i, 1, tabReserve);
+    //     //     localStorage.setItem('Reservation', JSON.stringify(reserver));
+    //     //     localStorage.setItem('table', JSON.stringify(mytable));
+    //     // }
+    // }
+    // console.log(position);
+    // if ((test == true) && (resAnnonce <= mytable[pos].place)) {
+    //     var res = reserver[position].idReserve;
+    //     console.log(res)
+    //     // var nbreReserver = 0;
+    //     // nbreReserver += resAnnonce;
+    //     mytable[pos].place -= resAnnonce;
+    //     tabReserve = {
+    //         idReserve: res,
+    //         id: mytable[pos].id,
+    //         idUser: connectedUser.id
+    //         // nbrePlaces:nbreReserver
+    //     }
+    //     reserver.splice(position, 1, tabReserve);
+    //     localStorage.setItem('Reservation', JSON.stringify(reserver));
+    //     localStorage.setItem('table', JSON.stringify(mytable));
+    //     document.getElementById("reservationComplet").innerHTML = "";
+    // } else if ((test = true) || (resAnnonce <= mytable[pos].place)) {
+    //     mytable[pos].place -= resAnnonce;
+    //     // var nbreReserver = 0;
+    //     // nbreReserver += resAnnonce;
+    //     console.log(mytable[pos].place);
+    //     tabReserve = {
+    //         idReserve: Math.floor((Math.random() * 1000) + 1),
+    //         id: mytable[pos].id,
+    //         idUser: connectedUser.id,
+    //         // nbrePlaces = nbreReserver
+    //     }
+    //     reserver.push(tabReserve);
+    //     localStorage.setItem('Reservation', JSON.stringify(reserver));
+    //     localStorage.setItem('table', JSON.stringify(mytable));
+    //     document.getElementById("reservationComplet").innerHTML = "";
+    // }
+    // else {
+    // document.getElementById("reservationComplet").innerHTML = "Annonce Complet";
+    // }
