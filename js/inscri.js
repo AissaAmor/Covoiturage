@@ -242,6 +242,16 @@ function connected() {
     }
     else {location.href = 'userConnected.html'; } 
 }
+function aboutConnected() { 
+    var loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+    
+    if(loggedUser == null) { 
+        console.log(loggedUser) ;
+        
+        location.href = 'about.html';
+    }
+    else {location.href = 'aboutConnected.html'; } 
+}
 
 function session() {  
     var logged = JSON.parse(localStorage.getItem('loggedUser'));  

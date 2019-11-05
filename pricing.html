@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Autoroad - Free Bootstrap 4 Template by Colorlib</title>
+  <title>Covoiturage</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/css/covoiturage.css">
+  <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -35,19 +37,36 @@
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item active"><a href="pricing.html" class="nav-link">Pricing</a></li>
-          <li class="nav-item"><a href="car.html" class="nav-link">Our Car</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" onclick="connected()">Home</a></li>
+          <li class="nav-item"><a onclick="aboutConnected()" class="nav-link">About</a></li>
+          <li class="nav-item active"><a href="pricing.html" class="nav-link">Mon profile</a></li>
+          <li class="nav-item"><a href="car.html" class="nav-link">Ajouter une annonce</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link avatar-with-name taswirti" id="navbarDropdownMenuLink" data-toggle="dropdown">
+              <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg"
+                class="d-inline-block align-top taswirti" alt="">
+              <label type="text" id="loggedU"> </label>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right menuyeah" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="pricing.html">Modifier Profile</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item text-danger" onclick="logout()" href="index.html">Se Déconnecter</a>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <!-- END nav -->
+<<<<<<< HEAD
   <div class="hero-wrap" style="background-image: url('images/xx.jpg');" data-stellar-background-ratio="0.3"></div>
   <section class="hero-wrap hero-wrap-2 js-fullheight" data-stellar-background-ratio="0.5">
+=======
+  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/covoiturage2.jpg');"
+    data-stellar-background-ratio="0.5">
+    <img src="/images/car-10.jpg">
+>>>>>>> 06bbbfabd8b303d7cd6b8fdc49f82eb4cce36a61
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -59,100 +78,112 @@
       </div>
     </div>
   </section>
-  <div class="container">
-    <br><br>
-    <h3>Modifier vos informations</h3><br><br>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <br>Profil:
-        <input type='file' onchange="readURL(this);" class="button button4" />
-        <img id="blah" src="#" alt="your image" style="border:1px solid black;" />
-        <img src="images/f_acc1.jpg" name="avatar" id="avatar" style="border:1px solid black;">
-                  <form method="post" name="formulairecompte" enctype="multipart/form-data" action="testupload.html">
-                  <input name="fichier" type="file" onchange="verifPoids_redimentionimage(this)">
-      </div>
-      <div class="col-md-1">
-        <label>username</label><br><br>
-        <label>nom</label><br><br>
-        <label>prénom</label><br><br>
-        <label>télephone</label><br><br>
-        <label>email</label><br><br>
-        <label>date </label><br><br>
-        <label>sex</label>
-      </div>
-      <div class="col-md-3">
-        <input class="profil" type="text" placeholder="votre nom" id="uname"><br>
-        <input class="profil" type="text" placeholder="votre nom" id="nom"><br>
-        <input class="profil" type="text" placeholder="votre prénom" id ="pre" > <br>
-        <input class="profil" type="number" placeholder="votre numéro" id="num"><br>
-        <input class="profil" type="email" placeholder="votre email" id ="email"><br>
-        <input class="profil" type="date" placeholder="votre date de naissance" id="date"><br>
-        <form action="">
-          <input type="radio" name="gender" value="male" id="hom"> homme<br>
-          <input type="radio" name="gender" value="female"id="fem"> Femme<br>
-        </form>
-      </div>
-      <div class="col-md-2">
-        <label>Ma voiture:</label> <br><br>
-        <label>marque</label> <br><br>
-        <label>date de permis</label> <br><br>
-        <label>option</label> <br><br>
-        <label>nombre de place</label> <br><br>
-        <label>image de voiture</label>
-        <input type='file' onchange="voi(this);" />
-        <img id="blahh" src="#" alt="your image" /><br><br>
-        <input type="submit" class="Submit" value="Valide" onclick="modif()">
-        
-        <input type="submit" class="Submit" value="accepter" onclick="modifp()">
-      </div>
-      <div class="col-md-2">
-        <input class="profil" type="text"id="voi"> <br>
-        <input class="profil" type="text" id="mar">  <br>
-        <input class="profil" type="date" id="da"> <br>
-        <input class="profil" type="text" id="op"><br>
-        <input class="profil" type="number" id="num">
-        
-      </div>
-      <div class="container">
-      <div class="col-md-6">
-
+  <br><br><br>
+  <section>
+    <p id="profilTitre">Modifier votre profil</p><br>
+    <div id="buttonProfil">
+      <input type="button" value="Informations Personnel" id="mesVoitures" onclick="infoPerso()"><br>
+      <input type="button" value="Informations Voiture" id="mesVoitures" onclick="infoVoiture()">
+    </div>
+    <div id="infoProfil">
+      <div class="row personnelInfo">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <input type='file' onchange="readURL(this);" class="button button4" />
+          <img id="blah" src="#" alt="your image" style="border:1px solid black;" />
+          <!-- <img src="images/f_acc1.jpg" name="avatar" id="avatar" style="border:1px solid black;"> -->
+          <!-- <form method="post" name="formulairecompte" enctype="multipart/form-data" action="testupload.html"> -->
+          <!-- <input name="fichier" type="file" onchange="verifPoids_redimentionimage(this)"> -->
         </div>
+        <div class="col-md-1">
+          <label>username</label><br><br>
+          <label>nom</label><br><br>
+          <label>prénom</label><br><br>
+          <label>télephone</label><br><br>
+          <label>email</label><br><br>
+          <label>date </label><br><br>
+          <label>sex</label>
+        </div>
+        <div class="col-md-3">
+          <input class="profil" type="text" placeholder="votre nom" id="uname"><br>
+          <input class="profil" type="text" placeholder="votre nom" id="nom"><br>
+          <input class="profil" type="text" placeholder="votre prénom" id="pre"> <br>
+          <input class="profil" type="number" placeholder="votre numéro" id="num"><br>
+          <input class="profil" type="email" placeholder="votre email" id="email"><br>
+          <input class="profil" type="date" placeholder="votre date de naissance" id="date"><br>
+          <form action="">
+            <input type="radio" name="gender" value="male" id="hom"> homme<br>
+            <input type="radio" name="gender" value="female" id="fem"> Femme<br><br><br>
+          </form>
+        </div>
+      </div>
+      <input type="button" value="Modifier" id="btt1" onclick="modif()">
+      <input type="button" value="Valider" id="btt2" onclick="modifp() ">
+      <a href="pricing.html"><input type="button" value="Retour" id="btt2"></a>
+    </div>
+    <div id="infoVoiture">
+        <p id="voitureTitre">Informations Voiture</p><br>
+        <table id="tableVoiture"></table>
+        <div id="ajoutVoiture">
+          <div id="voitureButton">
+            <br><br><br>
+          </div>
+          <div class="row voiture">
+            <div class="col-md-3">
+              <label>Marque:</label> <br><br>
+              <label>Modele</label> <br><br>
+              <label>date permis</label> <br>
+              <label>nombre place</label> <br><br><br>
+              <label>IMG voiture</label>
+              <input type='file' onchange="voi(this);" />
+              <img id="blahh" src="#" alt="your image" /><br><br>
+            </div>
+            <div class="col-md-2">
+              <input class="profil" type="text" id="voi"> <br>
+              <input class="profil" type="text" id="mar"> <br>
+              <input class="profil" type="date" id="da"> <br>
+              <input class="profil" type="number" id="num">
 
-               
+            </div>
+          </div>
+          <input type="button" id="mesVoitures" value="Ajout Voiture" onclick="ajoutVoiture()">
+        </div>
+        <div id="voitureBtt">
+          <input type="button" id="mesVoitures" value="Mes Voitures" onclick="afficheVoiture()">
+          <input type="button" id="mesVoitures" value="Ajout Voiture" onclick="ajoutVoiture()">
+        </div>
       </div>
     </div>
-  </div>
 
-    
-
-  <br><br><br>
-
-
-
+    </div>
+  </section>
+  <br><br>
   <section id="part1">
-  <div class="row mesTrajets">
-    <div class="col-md-2"></div>
-    <div class="col-md-10">
+    <div class="row mesTrajets">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
         <input type="button" id="bttModifier" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
         <label id="titre1">Mes Trajets</label>
         <table id="table1"></table>
-    </div><br><br><br><br>
+      </div><br><br><br><br>
   </section>
   <section id="part2">
-  <div class="row modifierTrajet">
+    <div class="row trajetTitre">
+      <div class="col-md-3"></div>
+      <div id="destination"></div><br><br>
+    </div>
+    <div class="row modifierTrajet">
       <div class="col-md-2"></div>
       <div class="col-md-2">
-          <label id="titre2"></label>
-          <label>Votre Voiture :</label><br><br>
-          <label>Frais de trajet :</label><br><br>
-          <label>Nombre des places :</label><br><br><br>
-          <label>Date de trajet :</label><br><br><br>
-          <label>Climatisation :</label><br><br>
-          <label>Fumées :</label><br><br>
-          <label>Music :</label><br><br>
-          <label>Commentaire :</label><br>
+        <label id="titre2"></label>
+        <label>Votre Voiture :</label><br><br>
+        <label>Frais de trajet :</label><br><br>
+        <label>Nombre des places :</label><br><br><br>
+        <label>Date de trajet :</label><br><br><br>
+        <label>Climatisation :</label><br><br>
+        <label>Fumées :</label><br><br>
+        <label>Music :</label><br><br>
+        <label>Commentaire :</label><br>
       </div>
       <div class="col-md-6">
         <select class="car">
@@ -179,26 +210,8 @@
         <div id="btt"></div>
       </div>
     </div>
-</section>
+  </section>
   </div>
-  <div class="row tete">
-    <br> <br>
-      <div class="col-md-4">
-      </div>
-      <div class="col-md-6">
-          <input type="submit" class="Submit" value="Valide">
-          
-          <input type="submit" class="Submit" value="Annulé">
-
-
-
-               
-      </div>
-      
-
-
-  </div>
-
   <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
     </div>
@@ -229,6 +242,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/inscri.js"></script>
 
 </body>
 
