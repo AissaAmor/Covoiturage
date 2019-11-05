@@ -89,7 +89,7 @@ function deleteAnnonce(idAnnonce) {
     console.log(mytable);
     this.afficheAnnonceProfil();
 }
-// document.getElementById('part2').style.display = 'none';
+document.getElementById('part2').style.display = 'none';
 function importAnnonce(pos) {
     var html = ``
     html += `<input type="button" value="Valider" onclick="editAnnonce(${pos})">`
@@ -183,7 +183,7 @@ console.log('All');
             // console.log(mytable[i].departTrajet);
             // console.log(Arrive);
             // console.log(mytable[i].arriveTrajet);
-            console.log(i);
+            // console.log(i);
             
             html += `
                 <div class="col-md-3">
@@ -206,8 +206,7 @@ console.log('All');
                            
     
     
-                        <p class="d-flex mb-0 d-block" ><a href="#" class="btn btn-black btn-outline-black mr-1" style="width:200px;">Réserver</a>
-                             
+                           <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>                             
                     </div>
             </div>
             </div>`
@@ -216,7 +215,7 @@ console.log('All');
 
 
         }
-        console.log(html);
+        // console.log(html);
         document.getElementById('rechAnnn').innerHTML = html;
     } else {
 console.log('One')
@@ -248,8 +247,7 @@ console.log('One')
                            
     
     
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>
-                          
+                           <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>                          
                     </div>
                 </div>
             </div>`
@@ -277,32 +275,31 @@ console.log('One')
                                        
                 
                                        
-                                       <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>
-                                       
+                                       <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>                                       
                                        </div>
                                        </div>
                                        </div>
                                        </div>`
             }
         }
-        console.log(html);
+        // console.log(html);
         document.getElementById('rechAnnn').innerHTML = html;
 
     }
-console.log(document.getElementById('rechAnnn'))
+// console.log(document.getElementById('rechAnnn'))
     // document.getElementById('rechAnn').innerHTML = 'djfklsdqhflhflqjsdhfjkqsdgfklqhsdkjfhdskjfhkjlqshfjksdhfkjqsdhfkjsqdhfkjh';
     // document.getElementById('rechAnnn').innerHTML = html;
 }
 
-function validNbrePLaces() {
-    var resAnnonce = document.getElementById('reservationNumber').value;
-    if (resAnnonce < 0) {
-        document.getElementById("messageErreur").innerHTML = "un nombre positive SVP !";
-        return false;
-    }
-    document.getElementById("messageErreur").innerHTML = "";
-    return true;
-}
+// function validNbrePLaces() {
+//     var resAnnonce = document.getElementById('reservationNumber').value;
+//     if (resAnnonce < 0) {
+//         document.getElementById("messageErreur").innerHTML = "un nombre positive SVP !";
+//         return false;
+//     }
+//     document.getElementById("messageErreur").innerHTML = "";
+//     return true;
+// }
 // document.getElementById('nbreReserver').style.display="none";
 // function afficheNbrePlace(){
 //     document.getElementById('nbreReserver').style.display="block";
@@ -312,13 +309,13 @@ function validNbrePLaces() {
 //               <input type="button" value="Valider" onclick="reservation(${i})" id="bttreserver">`
 //     document.getElementById('nbreReserver').innerHTML = html;
 // }
-function afficheNbrePlace() {
-    var html = ``;
-    html += ` <input type="number" placeholder="Nombre des places" id="reservation" onblur="validNbrePLaces()"><br>
-              <span id="messageErreur" style="color: red;"> </span><br>
-              <input type="button" value="Valider" onclick="reservation(${i})" id="bttreserver">`
-    document.getElementById('nbreReserver').innerHTML = html;
-}
+// function afficheNbrePlace() {
+//     var html = ``;
+//     html += ` <input type="number" placeholder="Nombre des places" id="reservation" onblur="validNbrePLaces()"><br>
+//               <span id="messageErreur" style="color: red;"> </span><br>
+//               <input type="button" value="Valider" onclick="reservation(${i})" id="bttreserver">`
+//     document.getElementById('nbreReserver').innerHTML = html;
+// }
 function reservation(pos) {
     var mytable = JSON.parse(localStorage.getItem('table'));
     // var resAnnonce = document.getElementById('reservation').value;
@@ -326,21 +323,27 @@ function reservation(pos) {
     var connectedUser = JSON.parse(localStorage.getItem('loggedUser'));
     if (reserver == null) {
         reserver = []
+    }
+    console.log(mytable)
+    console.log(pos)
         for (let i = 0; i < mytable.length; i++) {
-            mytable[pos].place -- ;
+            // mytable[pos].place -=1 ;
+            console.log(i);
+            // console.log(mytable[pos].place);
             tabReserve = {
                 idReserve: Math.floor((Math.random() * 1000) + 1),
                 id: mytable[pos].id,
                 idUser: connectedUser.id
             }
+            console.log(tabReserve)
             reserver.push(tabReserve);
         localStorage.setItem('Reservation', JSON.stringify(reserver));
         localStorage.setItem('table', JSON.stringify(mytable));
-        document.getElementById("reservationComplet").innerHTML = "";
-        }
+        // document.getElementById("reservationComplet").innerHTML = "";
     }
+    this.reservation();
 }   
-    console.log(connectedUser.id);
+    // console.log(connectedUser.id);
     // if (resAnnonce <= mytable[pos].place) {
     // var test = false;
     // for (let i = 0; i < reserver.length; i++) {
@@ -398,9 +401,8 @@ function reservation(pos) {
     // document.getElementById("reservationComplet").innerHTML = "Annonce Complet";
     // }
 
-    this.reservation();
 
-}
+// }
 
 
 // }else{
@@ -412,22 +414,22 @@ function reservation(pos) {
 //  ajouter/supprimer/modifier Voiture //
 
 
-// document.getElementById('infoProfil').style.display = 'none';
+document.getElementById('infoProfil').style.display = 'none';
 function infoPerso() {
     document.getElementById('infoProfil').style.display = 'block';
     document.getElementById('buttonProfil').style.display = 'none';
 }
 
-// document.getElementById('infoVoiture').style.display = 'none';
+document.getElementById('infoVoiture').style.display = 'none';
 function infoVoiture() {
     document.getElementById('infoVoiture').style.display = 'block';
     document.getElementById('infoProfil').style.display = 'none';
     document.getElementById('buttonProfil').style.display = 'none';
 }
 
-// document.getElementById('voitureBtt').style.display = 'block';
-// document.getElementById('ajoutVoiture').style.display = 'none';
-// document.getElementById('tableVoiture').style.display = 'none';
+document.getElementById('voitureBtt').style.display = 'block';
+document.getElementById('ajoutVoiture').style.display = 'none';
+document.getElementById('tableVoiture').style.display = 'none';
 
 function ajoutVoiture() {
 
@@ -454,9 +456,9 @@ function ajoutVoiture() {
 }
 
 
-// document.getElementById('voitureBtt').style.display = 'block';
-// document.getElementById('ajoutVoiture').style.display = 'none';
-// document.getElementById('tableVoiture').style.display = 'none';
+document.getElementById('voitureBtt').style.display = 'block';
+document.getElementById('ajoutVoiture').style.display = 'none';
+document.getElementById('tableVoiture').style.display = 'none';
 
 function afficheVoiture() {
 
@@ -491,7 +493,7 @@ function rechercheAnnonceUser() {
     var Arrive = document.getElementById('listVille1').value;
     let html = ``;
     if (lieuD == 'All' && Arrive == 'All') {
-console.log('All');
+    console.log('All');
         for (let i = 0; i < mytable.length; i++) {
             // console.log(lieuD);
             // console.log(mytable[i].departTrajet);
@@ -520,8 +522,7 @@ console.log('All');
                            
     
     
-                        <p class="d-flex mb-0 d-block" ><a href="#" class="btn btn-black btn-outline-black mr-1" style="width:200px;">Réserver</a>
-                             
+                           <p class="d-flex mb-0 d-block"><a onclick="reservation($)" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>                             
                     </div>
             </div>
             </div>`
@@ -530,7 +531,7 @@ console.log('All');
 
 
         }
-        console.log(html);
+        // console.log(html);
         document.getElementById('rechAnnnUser').innerHTML = html;
     } else {
 console.log('One')
@@ -562,8 +563,7 @@ console.log('One')
                            
     
     
-                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
-                          
+                           <p class="d-flex mb-0 d-block"><a onclick="reservation()" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>                          
                     </div>
                 </div>
             </div>`
@@ -590,16 +590,14 @@ console.log('One')
                                        <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
                                        
                 
-                                       
-                                       <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
-                                       
+                                       <p class="d-flex mb-0 d-block"><a onclick="reservation()" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>                                       
                                        </div>
                                        </div>
                                        </div>
                                        </div>`
             }
         }
-        console.log(html);
+        // console.log(html);
         document.getElementById('rechAnnnUser').innerHTML = html;
 
     }

@@ -157,3 +157,8 @@
     // else {
     // document.getElementById("reservationComplet").innerHTML = "Annonce Complet";
     // }
+
+
+
+
+                                     <p class="d-flex mb-0 d-block"><a onclick="reservation() class="btn btn-black btn-outline-black mr-1" ">Réserver</a>
