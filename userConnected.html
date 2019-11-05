@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="css/css/covoiturage.css">
 </head>
 
-<body onload="session()">
+<body onload="session();rechercheAnnonceUser()">
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
@@ -127,6 +127,7 @@
 												<div class="select-wrap">
 													<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 													<select id="listVille" class="form-control">
+													    <option value="All">All</option>
 														<option value="Centre-Ville Tunis">Centre-Ville Tunis</option>
 														<option value="Ariana">Ariana</option>
 														<option value="El-morouj">El-morouj</option>
@@ -150,6 +151,7 @@
 												<div class="select-wrap">
 													<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 													<select id="listVille1" class="form-control">
+														<option value="All">All</option>
 														<option value="Centre-Ville Tunis">Centre-Ville Tunis</option>
 														<option value="Ariana">Ariana</option>
 														<option value="El-morouj">El-morouj</option>
@@ -181,7 +183,7 @@
 										<div class="form-group">
 											<div class="form-field">
 												<input type="button" value="Recherche une annonce"
-													class="form-control btn btn-primary" onclick="rechercheAnnonce()">
+													class="form-control btn btn-primary" onclick="rechercheAnnonceUser()">
 											</div>
 										</div>
 									</div>
@@ -200,8 +202,54 @@
 					<div id="nbreReserver"></div>
 				</div>
 			</div>
-		</section>
+			<!--affichage des annonces-->
+			<section class="ftco-section">
+					<div class="container-fluid px-4">
+						<div class="row justify-content-center">
+					  <div class="col-md-12 heading-section text-center ftco-animate mb-5">
+						 
+						<h2 class="mb-2">Les annonces</h2>
+					  </div>
+					</div>
+					 
+						<div class="row" id="rechAnnnUser">
+		
+							 <!-- <div class="col-md-3" id="rechAnn">
+								hjkhjk
+								<div class="car-wrap ftco-animate">
+									<div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+										<div class="price-wrap d-flex">
+											<span class="rate" id="prixTrajet"></span>
+											<p class="from-day">
+												<span></span>
+												<span>Prix</span>
+											</p>
+										</div>
+									</div>
+									<div class="text p-4 text-center">
+		
+										
+										<h6 class="mb-0"><a >lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd"> </span> </h6>
+		
+										<h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda">  </span> </h6>
+										   <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt">  </span> </h6>
+										   <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> </span> </h6>
+										   
+		
+		
+										<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
+											 <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
+									</div>
+								</div>
+							ghghkj
+							</div>  -->
+						
+						</div> 
+						</div>
+				</section>
 
+		</section>
+		 
 		<!-- Proposez une annonce -->
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container">

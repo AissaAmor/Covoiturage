@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="css/css/covoiturage.css">
 </head>
 
-<body>
+<body onload="rechercheAnnonce()">
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 		<div class="container">
@@ -116,6 +116,7 @@
 											<div class="select-wrap">
 												<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 												<select id="listVille" class="form-control">
+													<option value="All">All</option>
 													<option value="Centre-Ville Tunis">Centre-Ville Tunis</option>
 													<option value="Ariana">Ariana</option>
 													<option value="El-morouj">El-morouj</option>
@@ -139,6 +140,7 @@
 											<div class="select-wrap">
 												<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 												<select id="listVille1" class="form-control">
+													<option value="All">All</option>
 													<option value="Centre-Ville Tunis">Centre-Ville Tunis</option>
 													<option value="Ariana">Ariana</option>
 													<option value="El-morouj">El-morouj</option>
@@ -180,7 +182,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="row recherche">
+		<div class="row recherche">
 			<div class="col-md-2"></div>
 			<div class="col-md-7">
 				<table id="rechAnnonce" ></table>
@@ -189,7 +191,7 @@
 				<div id="nbreReserver">
 				</div>
 			</div>
-		</div> -->
+		</div>
 		                           <!--new      affichage-->
 		<section class="ftco-section">
 			<div class="container-fluid px-4">
@@ -200,11 +202,11 @@
 			  </div>
 			</div>
 			 
-				<div class="row">
-					
-					<div class="col-md-3">
-						<div id="rechAnn"> </div>
-						<!-- <div class="car-wrap ftco-animate">
+				<div class="row" id="rechAnnn">
+
+					 <!-- <div class="col-md-3" id="rechAnn">
+						hjkhjk
+						<div class="car-wrap ftco-animate">
 							<div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
 								<div class="price-wrap d-flex">
 									<span class="rate" id="prixTrajet"></span>
@@ -215,6 +217,8 @@
 								</div>
 							</div>
 							<div class="text p-4 text-center">
+
+								
 								<h6 class="mb-0"><a >lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd"> </span> </h6>
 
 								<h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda">  </span> </h6>
@@ -226,139 +230,12 @@
 								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
 									 <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
 							</div>
-						</div> -->
-					
-					</div>
-					<!-- <div class="col-md-3">
-						<div class="car-wrap ftco-animate">
-							<div class="img d-flex align-items-end" style="background-image: url(images/car-2.jpg);">
-								<div class="price-wrap d-flex">
-									<span class="rate">$25</span>
-									<p class="from-day">
-										<span>From</span>
-										<span>/Day</span>
-									</p>
-								</div>
-							</div>
-							<div class="text p-4 text-center">
-								<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-								<span>Ford</span>
-								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-							</div>
 						</div>
-					</div> -->
-					<!-- <div class="col-md-3">
-						<div class="car-wrap ftco-animate">
-							<div class="img d-flex align-items-end" style="background-image: url(images/car-3.jpg);">
-								<div class="price-wrap d-flex">
-									<span class="rate">$25</span>
-									<p class="from-day">
-										<span>From</span>
-										<span>/Day</span>
-									</p>
-								</div>
-							</div>
-							<div class="text p-4 text-center">
-								<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-								<span>Cheverolet</span>
-								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-							</div>
-						</div>
-					</div> -->
-					<!-- <div class="col-md-3">
-						<div class="car-wrap ftco-animate">
-							<div class="img d-flex align-items-end" style="background-image: url(images/car-4.jpg);">
-								<div class="price-wrap d-flex">
-									<span class="rate">$25</span>
-									<p class="from-day">
-										<span>From</span>
-										<span>/Day</span>
-									</p>
-								</div>
-							</div>
-							<div class="text p-4 text-center">
-								<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-								<span>Mercedes</span>
-								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-							</div>
-						</div>
+					ghghkj
 					</div>  -->
-	
-					<!-- <div class="col-md-3">
-						<div class="car-wrap ftco-animate">
-							<div class="img d-flex align-items-end" style="background-image: url(images/car-5.jpg);">
-								<div class="price-wrap d-flex">
-									<span class="rate">$25</span>
-									<p class="from-day">
-										<span>From</span>
-										<span>/Day</span>
-									</p>
-								</div>
-							</div>
-							<div class="text p-4 text-center">
-								<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-								<span>Audi</span>
-								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-							</div>
-						</div>
-					</div> -->
-					<!-- <div class="col-md-3">
-						<div class="car-wrap ftco-animate">
-							<div class="img d-flex align-items-end" style="background-image: url(images/car-6.jpg);">
-								<div class="price-wrap d-flex">
-									<span class="rate">$25</span>
-									<p class="from-day">
-										<span>From</span>
-										<span>/Day</span>
-									</p>
-								</div>
-							</div>
-							<div class="text p-4 text-center">
-								<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-								<span>Ford</span>
-								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-							</div>
-						</div>
-					</div> -->
-					<!-- <div class="col-md-3">
-						<div class="car-wrap ftco-animate">
-							<div class="img d-flex align-items-end" style="background-image: url(images/car-7.jpg);">
-								<div class="price-wrap d-flex">
-									<span class="rate">$25</span>
-									<p class="from-day">
-										<span>From</span>
-										<span>/Day</span>
-									</p>
-								</div>
-							</div>
-							<div class="text p-4 text-center">
-								<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-								<span>Cheverolet</span>
-								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-							</div>
-						</div>
-					</div> -->
-					<!-- <div class="col-md-3">
-						<div class="car-wrap ftco-animate">
-							<div class="img d-flex align-items-end" style="background-image: url(images/car-8.jpg);">
-								<div class="price-wrap d-flex">
-									<span class="rate">$25</span>
-									<p class="from-day">
-										<span>From</span>
-										<span>/Day</span>
-									</p>
-								</div>
-							</div>
-							<div class="text p-4 text-center">
-								<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-								<span>Mercedes</span>
-								<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Book now</a> <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-							</div>
-						</div>
-					</div> -->
+				
 				</div> 
 				</div>
-			</div>
 		</section>
 	</section>
 

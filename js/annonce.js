@@ -82,7 +82,7 @@ function deleteAnnonce(idAnnonce) {
     console.log(mytable);
     this.afficheAnnonceProfil();
 }
-document.getElementById('part2').style.display = 'none';
+// document.getElementById('part2').style.display = 'none';
 function importAnnonce(pos) {
     var html = ``
     html += `<input type="button" value="Valider" onclick="editAnnonce(${pos})">`
@@ -129,14 +129,14 @@ function editAnnonce(pos) {
 
 //             html += `<tr>
 //                             <td id="colTrajet">
-//                                 <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
-//                                 <label id="attribut">Destination :${mytable[i].arriveTrajet}</label><br>
-//                                 <label id="attribut">Date de trajet :${mytable[i].dateTrajet}<br> 
-//                                 <label id="attribut">Prix par passager :${mytable[i].prix}</label><br>
-//                                 <label id="attribut">Nombre de places : ${mytable[i].place}<br> 
-//                                 <label id="attribut">Climatisation : ${mytable[i].climatisation}</label><br>
-//                                 <label id="attribut">Tabac : ${mytable[i].fumees}<br> 
-//                                 <label id="attribut">Musique : ${mytable[i].musique}</label>
+//                                 <label class="mb-0">Lieu de depart :<span  style="color:rgb(255, 0, 0)"> ${mytable[i].departTrajet} </span></label><br>
+//                                 <label class="mb-0">Destination :${mytable[i].arriveTrajet}</label><br>
+//                                 <label class="mb-0">Date de trajet :${mytable[i].dateTrajet}<br> 
+//                                 <label class="mb-0">Prix par passager :${mytable[i].prix}</label><br>
+//                                 <label class="mb-0">Nombre de places : ${mytable[i].place}<br> 
+//                                 <label class="mb-0">Climatisation : ${mytable[i].climatisation}</label><br>
+//                                 <label class="mb-0">Tabac : ${mytable[i].fumees}<br> 
+//                                 <label class="mb-0">Musique : ${mytable[i].musique}</label>
 //                             </td>
 //                             <td id="colTrajet">
 //                                 <input type="button" value="Reserver" id="bttAnnonce" onclick="reservation(${i})">
@@ -145,14 +145,14 @@ function editAnnonce(pos) {
 //         } else if ((Arrive == mytable[i].arriveTrajet) || (lieuD == mytable[i].departTrajet)) {
 //             html += `<tr>
 //                             <td id="colTrajet">
-//                                 <label id="attribut">Lieu de depart :${mytable[i].departTrajet}</label><br>
-//                                 <label id="attribut">Destination :${mytable[i].arriveTrajet}</label><br>
-//                                 <label id="attribut">Date de trajet :${mytable[i].dateTrajet}<br> 
-//                                 <label id="attribut">Prix par passager :${mytable[i].prix}</label><br>
-//                                 <label id="attribut">Nombre de places : ${mytable[i].place}<br> 
-//                                 <label id="attribut">Climatisation : ${mytable[i].climatisation}</label><br>
-//                                 <label id="attribut">Tabac : ${mytable[i].fumees}<br> 
-//                                 <label id="attribut">Musique : ${mytable[i].musique}</label>
+//                                 <label class="mb-0">Lieu de depart :${mytable[i].departTrajet}</label><br>
+//                                 <label class="mb-0">Destination :${mytable[i].arriveTrajet}</label><br>
+//                                 <label class="mb-0">Date de trajet :${mytable[i].dateTrajet}<br> 
+//                                 <label class="mb-0">Prix par passager :${mytable[i].prix}</label><br>
+//                                 <label class="mb-0">Nombre de places : ${mytable[i].place}<br> 
+//                                 <label class="mb-0">Climatisation : ${mytable[i].climatisation}</label><br>
+//                                 <label class="mb-0">Tabac : ${mytable[i].fumees}<br> 
+//                                 <label class="mb-0">Musique : ${mytable[i].musique}</label>
 //                             </td>
 //                             <td id="colTrajet">
 //                                 <input type="button" value="Reserver" id="bttAnnonce" onclick="reservation(${i})">
@@ -163,76 +163,128 @@ function editAnnonce(pos) {
 //         document.getElementById('rechAnnonce').innerHTML = html;
 //     }
 // }
-                                    // new affiche // 
+// new affiche // 
 function rechercheAnnonce() {
     var mytable = JSON.parse(localStorage.getItem('table'));
     var lieuD = document.getElementById('listVille').value;
     var Arrive = document.getElementById('listVille1').value;
-    var html = ``;
-    for (let i = 0; i < mytable.length; i++) {
-        if ((lieuD == mytable[i].departTrajet) && (Arrive == mytable[i].arriveTrajet)) {
-           
-            html += `<div class="row">
-            <div class="col-md-3" >
-            <div class="car-wrap ftco-animate">
-                <div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
-                    <div class="price-wrap d-flex">
-                        <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
-                        <p class="from-day">
-                            <span></span>
-                            <span>Prix</span>
-                        </p>
+    let html = ``;
+    if (lieuD == 'All' && Arrive == 'All') {
+console.log('All');
+        for (let i = 0; i < mytable.length; i++) {
+            // console.log(lieuD);
+            // console.log(mytable[i].departTrajet);
+            // console.log(Arrive);
+            // console.log(mytable[i].arriveTrajet);
+            console.log(i);
+            
+            html += `
+                <div class="col-md-3">
+                <div class="car-wrap">
+                    <div class="img d-flex align-items-end" style="width: 100%;background-image: url(images/car-1.jpg);">
+                        <div class="price-wrap d-flex">
+                            <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
+                            <p class="from-day">
+                                <span></span>
+                                <span>Prix</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text p-4 text-center" style="width: 100%;">
+                        <h6 class="mb-0"><a>lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
+    
+                        <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
+                           <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
+                           <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
+                           
+    
+    
+                        <p class="d-flex mb-0 d-block" ><a href="#" class="btn btn-black btn-outline-black mr-1" style="width:200px;">Réserver</a>
+                             
+                    </div>
+            </div>
+            </div>`
+
+
+
+
+        }
+        console.log(html);
+        document.getElementById('rechAnnn').innerHTML = html;
+    } else {
+console.log('One')
+        for (let i = 0; i < mytable.length; i++) {
+            // console.log(lieuD);
+            // console.log(mytable[i].departTrajet);
+            // console.log(Arrive);
+            // console.log(mytable[i].arriveTrajet);
+            if ((lieuD == mytable[i].departTrajet) && (Arrive == mytable[i].arriveTrajet)) {
+
+                html += `
+                <div class="col-md-3" >
+                <div class="car-wrap">
+                    <div class="img d-flex align-items-end" style="width: 100%;background-image: url(images/car-1.jpg);">
+                        <div class="price-wrap d-flex">
+                            <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
+                            <p class="from-day">
+                                <span></span>
+                                <span>Prix</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text p-4 text-center"style="width: 100%;">
+                        <h6 class="mb-0"><a>lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
+    
+                        <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
+                           <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
+                           <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
+                           
+    
+    
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>
+                          
                     </div>
                 </div>
-                <div class="text p-4 text-center">
-                    <h6 class="mb-0"><a>lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
+            </div>`
+            }
 
-                    <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
-                       <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
-                       <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
-                       
-
-
-                    <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
-                         <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                </div>
-            </div>
-        </div>
-        </div>`
-        }
-         
-        else if ((Arrive == mytable[i].arriveTrajet) || (lieuD == mytable[i].departTrajet)) {
-            html += `<div class="row">
-                    <div class="col-md-3">
-                        <div class="car-wrap ftco-animate">
-                            <div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
-                                <div class="price-wrap d-flex">
-                                    <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
-                                    <p class="from-day">
-                                        <span></span>
-                                        <span>Prix</span>
-                                    </p>
+            else if ((Arrive == mytable[i].arriveTrajet) || (lieuD == mytable[i].departTrajet)) {
+                html += `<div class="row">
+                        <div class="col-md-3">
+                            <div class="car-wrap ftco-animate">
+                                <div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+                                    <div class="price-wrap d-flex">
+                                        <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
+                                        <p class="from-day">
+                                            <span></span>
+                                            <span>Prix</span>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text p-4 text-center">
-                                <h6 class="mb-0"><a >lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
-            
-                                <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
-                                   <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
-                                   <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
-                                   
-            
-                                   
-                                   <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
-                                   <a href="#" class="btn btn-black btn-outline-black ml-1">Details</a></p>
-                                   </div>
-                                   </div>
-                                   </div>
-                                   </div>`
+                                <div class="text p-4 text-center">
+                                    <h6 class="mb-0"><a >lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
+                
+                                    <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
+                                       <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
+                                       <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
+                                       
+                
+                                       
+                                       <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1"style="width:200px;">Réserver</a>
+                                       
+                                       </div>
+                                       </div>
+                                       </div>
+                                       </div>`
+            }
         }
-         
-        document.getElementById('rechAnn').innerHTML = html;
+        console.log(html);
+        document.getElementById('rechAnnn').innerHTML = html;
+
     }
+console.log(document.getElementById('rechAnnn'))
+    // document.getElementById('rechAnn').innerHTML = 'djfklsdqhflhflqjsdhfjkqsdgfklqhsdkjfhdskjfhkjlqshfjksdhfkjqsdhfkjsqdhfkjh';
+    // document.getElementById('rechAnnn').innerHTML = html;
 }
 
 function validNbrePLaces() {
@@ -266,22 +318,22 @@ function reservation(pos) {
 //  ajouter/supprimer/modifier Voiture //
 
 
-document.getElementById('infoProfil').style.display = 'none';
+// document.getElementById('infoProfil').style.display = 'none';
 function infoPerso() {
     document.getElementById('infoProfil').style.display = 'block';
     document.getElementById('buttonProfil').style.display = 'none';
 }
 
-document.getElementById('infoVoiture').style.display = 'none';
+// document.getElementById('infoVoiture').style.display = 'none';
 function infoVoiture() {
     document.getElementById('infoVoiture').style.display = 'block';
     document.getElementById('infoProfil').style.display = 'none';
     document.getElementById('buttonProfil').style.display = 'none';
 }
 
-document.getElementById('voitureBtt').style.display = 'block';
-document.getElementById('ajoutVoiture').style.display = 'none';
-document.getElementById('tableVoiture').style.display = 'none';
+// document.getElementById('voitureBtt').style.display = 'block';
+// document.getElementById('ajoutVoiture').style.display = 'none';
+// document.getElementById('tableVoiture').style.display = 'none';
 
 function ajoutVoiture() {
 
@@ -308,9 +360,9 @@ function ajoutVoiture() {
 }
 
 
-document.getElementById('voitureBtt').style.display = 'block';
-document.getElementById('ajoutVoiture').style.display = 'none';
-document.getElementById('tableVoiture').style.display = 'none';
+// document.getElementById('voitureBtt').style.display = 'block';
+// document.getElementById('ajoutVoiture').style.display = 'none';
+// document.getElementById('tableVoiture').style.display = 'none';
 
 function afficheVoiture() {
 
@@ -338,4 +390,126 @@ function afficheVoiture() {
     }
     document.getElementById('tableVoiture').innerHTML = html;
 
+}
+function rechercheAnnonceUser() {
+    var mytable = JSON.parse(localStorage.getItem('table'));
+    var lieuD = document.getElementById('listVille').value;
+    var Arrive = document.getElementById('listVille1').value;
+    let html = ``;
+    if (lieuD == 'All' && Arrive == 'All') {
+console.log('All');
+        for (let i = 0; i < mytable.length; i++) {
+            // console.log(lieuD);
+            // console.log(mytable[i].departTrajet);
+            // console.log(Arrive);
+            // console.log(mytable[i].arriveTrajet);
+            console.log(i);
+            
+            html += `
+                <div class="col-md-3">
+                <div class="car-wrap">
+                    <div class="img d-flex align-items-end" style="width: 100%;background-image: url(images/car-1.jpg);">
+                        <div class="price-wrap d-flex">
+                            <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
+                            <p class="from-day">
+                                <span></span>
+                                <span>Prix</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text p-4 text-center" style="width: 100%;">
+                        <h6 class="mb-0"><a>lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
+    
+                        <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
+                           <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
+                           <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
+                           
+    
+    
+                        <p class="d-flex mb-0 d-block" ><a href="#" class="btn btn-black btn-outline-black mr-1" style="width:200px;">Réserver</a>
+                             
+                    </div>
+            </div>
+            </div>`
+
+
+
+
+        }
+        console.log(html);
+        document.getElementById('rechAnnnUser').innerHTML = html;
+    } else {
+console.log('One')
+        for (let i = 0; i < mytable.length; i++) {
+            // console.log(lieuD);
+            // console.log(mytable[i].departTrajet);
+            // console.log(Arrive);
+            // console.log(mytable[i].arriveTrajet);
+            if ((lieuD == mytable[i].departTrajet) && (Arrive == mytable[i].arriveTrajet)) {
+
+                html += `
+                <div class="col-md-3" >
+                <div class="car-wrap">
+                    <div class="img d-flex align-items-end" style="width: 100%;background-image: url(images/car-1.jpg);">
+                        <div class="price-wrap d-flex">
+                            <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
+                            <p class="from-day">
+                                <span></span>
+                                <span>Prix</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text p-4 text-center"style="width: 100%;">
+                        <h6 class="mb-0"><a>lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
+    
+                        <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
+                           <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
+                           <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
+                           
+    
+    
+                        <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
+                          
+                    </div>
+                </div>
+            </div>`
+            }
+
+            else if ((Arrive == mytable[i].arriveTrajet) || (lieuD == mytable[i].departTrajet)) {
+                html += `<div class="row">
+                        <div class="col-md-3">
+                            <div class="car-wrap ftco-animate">
+                                <div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
+                                    <div class="price-wrap d-flex">
+                                        <span class="rate" id="prixTrajet">${mytable[i].prix}</span>
+                                        <p class="from-day">
+                                            <span></span>
+                                            <span>Prix</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="text p-4 text-center">
+                                    <h6 class="mb-0"><a >lieux de départ</a>:<span  style="color:rgb(255, 0, 0)" id="ldd">${mytable[i].departTrajet} </span> </h6>
+                
+                                    <h6 class="mb-0"><a >lieux d'arrivée </a>:<span  style="color:rgb(255, 0, 0)" id="lda"> ${mytable[i].arriveTrajet}</span> </h6>
+                                       <h6 class="mb-0"><a >date de trajet</a>:<span  style="color:rgb(255, 0, 0)" id="ddt"> ${mytable[i].dateTrajet} </span> </h6>
+                                       <h6 class="mb-0"><a >nombre de place</a>:<span  style="color:rgb(255, 0, 0)" id="ndp"> ${mytable[i].place} </span> </h6>
+                                       
+                
+                                       
+                                       <p class="d-flex mb-0 d-block"><a href="#" class="btn btn-black btn-outline-black mr-1">Réserver</a>
+                                       
+                                       </div>
+                                       </div>
+                                       </div>
+                                       </div>`
+            }
+        }
+        console.log(html);
+        document.getElementById('rechAnnnUser').innerHTML = html;
+
+    }
+console.log(document.getElementById('rechAnnnUser'))
+    // document.getElementById('rechAnn').innerHTML = 'djfklsdqhflhflqjsdhfjkqsdgfklqhsdkjfhdskjfhkjlqshfjksdhfkjqsdhfkjsqdhfkjh';
+    // document.getElementById('rechAnnn').innerHTML = html;
 }
