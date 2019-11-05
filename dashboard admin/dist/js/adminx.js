@@ -91,4 +91,12 @@ function active(pos) {
   todoUser[pos].Etat="Active" ; 
   localStorage.setItem('User',JSON.stringify(todoUser)); 
   affichUser();
+} 
+
+function afficheNombreDeCompte() { 
+  var nb = JSON.parse(localStorage.getItem('User')) || [] 
+  var length = nb.length; 
+  console.log(length); 
+  document.getElementById('nbr').innerHTML = length; 
+
 }

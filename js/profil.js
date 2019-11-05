@@ -45,7 +45,6 @@ function modif() {
 }
 function modifp() {
     var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
-    var user = JSON.parse(localStorage.getItem('User')) || []
     var   user = JSON.parse(localStorage.getItem('User')) || []
     var tabUser = {
         username: document.getElementById('uname').value,
