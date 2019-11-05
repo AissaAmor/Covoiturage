@@ -73,6 +73,7 @@
     color: rgb(247, 70, 0);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
+    font-style: italic;
 }
 #attribut{
     color: rgb(0, 0, 0);
@@ -117,11 +118,13 @@
 #mesVoitures {
     background-color: #F7B71D;
     padding: 16px 10px;
-    margin-left:100px;
+    margin-left:400px;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 45%;
     color: white;
+    border-radius: 12px;
+    margin-top: 10px;
   }
 #bttAnnonce {
     background-color: #F7B71D;
@@ -152,10 +155,10 @@
     color: brown;
 }
 #profilTitre{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:palatino;
     font-size:50px;
     color: rgb(247, 70, 0);
-    margin-left: 600px;
+    margin-left: 450px;
 }
 #voitureTitre{
     font-family: unset;
@@ -172,4 +175,10 @@
 
 #attribut{
     width: 460px;
+}
+#tra{font-family:palatino;
+    font-size:50px;
+    color: rgb(247, 70, 0);
+    margin-left: 450px;
+
 }

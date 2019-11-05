@@ -59,14 +59,9 @@
     </div>
   </nav>
   <!-- END nav -->
-<<<<<<< HEAD
-  <div class="hero-wrap" style="background-image: url('images/xx.jpg');" data-stellar-background-ratio="0.3"></div>
-  <section class="hero-wrap hero-wrap-2 js-fullheight" data-stellar-background-ratio="0.5">
-=======
   <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/covoiturage2.jpg');"
     data-stellar-background-ratio="0.5">
     <img src="/images/car-10.jpg">
->>>>>>> 06bbbfabd8b303d7cd6b8fdc49f82eb4cce36a61
     <div class="overlay"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
@@ -83,7 +78,9 @@
     <p id="profilTitre">Modifier votre profil</p><br>
     <div id="buttonProfil">
       <input type="button" value="Informations Personnel" id="mesVoitures" onclick="infoPerso()"><br>
+      
       <input type="button" value="Informations Voiture" id="mesVoitures" onclick="infoVoiture()">
+      <input type="button" id="mesVoitures" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
     </div>
     <div id="infoProfil">
       <div class="row personnelInfo">
@@ -159,11 +156,11 @@
   </section>
   <br><br>
   <section id="part1">
-    <div class="row mesTrajets">
+    <div class="row mesTrajets"> 
       <div class="col-md-2"></div>
       <div class="col-md-10">
-        <input type="button" id="bttModifier" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
-        <label id="titre1">Mes Trajets</label>
+       
+    
         <table id="table1"></table>
       </div><br><br><br><br>
   </section>
