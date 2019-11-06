@@ -4,7 +4,7 @@ function readURL(input) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#blah')
+            $('#imageProfil')
                 .attr('src', e.target.result)
                 .width(150)
                 .height(200);
@@ -20,7 +20,7 @@ function voi(input) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#blahh')
+            $('#imageProfil')
                 .attr('src', e.target.result)
                 .width(150)
                 .height(200);
@@ -35,39 +35,46 @@ function modif() {
     var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
     // var user = JSON.parse(localStorage.getItem('User')) || []
 
-    document.getElementById('uname').value = loggedin.userName;
+    document.getElementById('username').value = loggedin.userName;
     document.getElementById('nom').value = loggedin.nom;
-    document.getElementById('pre').value = loggedin.prenom;
-    document.getElementById('num').value = loggedin.num;
+    document.getElementById('prenom').value = loggedin.prenom;
     document.getElementById('email').value = loggedin.email;
-    document.getElementById('date').value = loggedin.dateDeNaissance;
-    document.getElementById('blah').src = loggedin.image;
+    document.getElementById('Adress').value = loggedin.adresse;
+    document.getElementById('numTel').value = loggedin.num;
+    document.getElementById('dateNaissance').value = loggedin.dateDeNaissance;
+    document.getElementById('imageProfil').src = loggedin.image;
     // document.getElementById('blahh')..setAttribute("class", )=loggedin.yourimage;
     // document.getElementById("H1")[0].setAttribute("class", "democlass");
     // document.getElementById('hom').value=loggedin[i].sex;
 }
-function modifp() {
+function modifierProfil() {
     var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
     var user = JSON.parse(localStorage.getItem('User')) || []
-    var tabUser = {
-        username: document.getElementById('uname').value,
-        nom: document.getElementById('nom').value,
-        prenm: document.getElementById('pre').value,
-        nume: document.getElementById('num').value,
-        email: document.getElementById('email').value,
-        dat: document.getElementById('date').value,
-        id: user.id,
-        image:document.getElementById('blah').value
-    }
-    console.log(tabUser.id);
+    console.log(user.id)
+    // console.log(tabUser.id);
     for (let i = 0; i < user.length; i++) {
         if (user[i].id == loggedin.id) {
+                var tabUser = {
+                    Etat:user[i].Etat, 
+                    username: document.getElementById('username').value,
+                    nom: document.getElementById('nom').value,
+                    prenom: document.getElementById('prenom').value,
+                    email: document.getElementById('email').value,
+                    adresse: document.getElementById('Adress').value,
+                    num: document.getElementById('numTel').value,
+                    dateDeNaissance: document.getElementById('dateNaissance').value,
+                    id: user[i].id,
+                    image:document.getElementById('imageProfil').value,
+                    sexe:user[i].sexe
+                }
             user.splice(i, 1, tabUser);
+            // loggedin.splice(1,1,tabUser);
             console.log(i);
             localStorage.setItem('User', JSON.stringify(user));
+            localStorage.setItem('loggedUser', JSON.stringify(loggedin));
             console.log(user);
         }
-        document.getElementById("taswirtii").innerHTML=('blah'); 
+        document.getElementById("taswirtii").innerHTML=('imageProfil'); 
     }
 }
 function image() {
@@ -75,7 +82,7 @@ function image() {
 
 
     image.onload = function () {
-        document.getElementById("blah").src = image.src = "images/profil.jpg";
+        document.getElementById("imageProfil").src = image.src = "images/profil.jpg";
     }
 
 
