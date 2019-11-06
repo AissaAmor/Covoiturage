@@ -5,29 +5,30 @@
 	<title>Covoiturage</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	
 	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-		rel="stylesheet">
+	rel="stylesheet">
 
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
 	<link rel="stylesheet" href="css/animate.css">
-
+	
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="css/magnific-popup.css">
-
+	
 	<link rel="stylesheet" href="css/aos.css">
-
+	
 	<link rel="stylesheet" href="css/ionicons.min.css">
-
+	
 	<link rel="stylesheet" href="css/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="css/jquery.timepicker.css">
-
-
+	
+	
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/css/covoiturage.css">
+	
 </head>
 
 <body onload="session();rechercheAnnonceUser()">
@@ -49,7 +50,7 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link avatar-with-name taswirti" id="navbarDropdownMenuLink"
 							data-toggle="dropdown">
-							<img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg"
+							<img id="taswirti"
 								class="d-inline-block align-top taswirti" alt="">
 							<label type="text" id="loggedU"> </label>
 						</a>
@@ -127,7 +128,7 @@
 												<div class="select-wrap">
 													<div class="icon"><span class="ion-ios-arrow-down"></span></div>
 													<select id="listVille" class="form-control">
-													    <option value="All">All</option>
+														<option value="All">All</option>
 														<option value="Centre-Ville Tunis">Centre-Ville Tunis</option>
 														<option value="Ariana">Ariana</option>
 														<option value="El-morouj">El-morouj</option>
@@ -183,7 +184,8 @@
 										<div class="form-group">
 											<div class="form-field">
 												<input type="button" value="Recherche une annonce"
-													class="form-control btn btn-primary" onclick="rechercheAnnonceUser()">
+													class="form-control btn btn-primary"
+													onclick="rechercheAnnonceUser()">
 											</div>
 										</div>
 									</div>
@@ -204,17 +206,17 @@
 			</div>
 			<!--affichage des annonces-->
 			<section class="ftco-section">
-					<div class="container-fluid px-4">
-						<div class="row justify-content-center">
-					  <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-						 
-						<h2 class="mb-2">Les annonces</h2>
-					  </div>
+				<div class="container-fluid px-4">
+					<div class="row justify-content-center">
+						<div class="col-md-12 heading-section text-center ftco-animate mb-5">
+
+							<h2 class="mb-2">Les annonces</h2>
+						</div>
 					</div>
-					 
-						<div class="row" id="rechAnnnUser">
-		
-							 <!-- <div class="col-md-3" id="rechAnn">
+
+					<div class="row" id="rechAnnnUser">
+
+						<!-- <div class="col-md-3" id="rechAnn">
 								hjkhjk
 								<div class="car-wrap ftco-animate">
 									<div class="img d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
@@ -243,13 +245,13 @@
 								</div>
 							ghghkj
 							</div>  -->
-						
-						</div> 
-						</div>
-				</section>
+
+					</div>
+				</div>
+			</section>
 
 		</section>
-		 
+
 		<!-- Proposez une annonce -->
 		<section class="ftco-section ftco-no-pt ftco-no-pb">
 			<div class="container">
@@ -434,7 +436,6 @@
 	<script src="js/main.js"></script>
 	<script src="js/inscri.js"></script>
 	<script src="js/annonce.js"></script>
-
 </body>
 
 </html>

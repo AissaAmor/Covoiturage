@@ -2,18 +2,29 @@
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
+        var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
 
         reader.onload = function (e) {
             $('#blah')
                 .attr('src', e.target.result)
                 .width(150)
                 .height(200);
+            loggedin.image = e.target.result;
+            localStorage.setItem('loggedUser', JSON.stringify(loggedin));
         };
-
         reader.readAsDataURL(input.files[0]);
     }
 }
 
+function img() {
+    var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
+    $('#blah')
+    .attr('src', e.target.result)
+
+    loggedin.image = e.target.result;
+    localStorage.setItem('loggedUser', JSON.stringify(loggedin));
+
+}
 
 function voi(input) {
     if (input.files && input.files[0]) {
@@ -41,7 +52,8 @@ function modif() {
     document.getElementById('num').value = loggedin.num;
     document.getElementById('email').value = loggedin.email;
     document.getElementById('date').value = loggedin.dateDeNaissance;
-    document.getElementById('blah').src = loggedin.image;
+    document.getElementById('blah').src = './images/' + loggedin.image;
+    document.getElementById('taswirtii').src = './images/' + loggedin.image;
     // document.getElementById('blahh')..setAttribute("class", )=loggedin.yourimage;
     // document.getElementById("H1")[0].setAttribute("class", "democlass");
     // document.getElementById('hom').value=loggedin[i].sex;
@@ -57,7 +69,7 @@ function modifp() {
         email: document.getElementById('email').value,
         dat: document.getElementById('date').value,
         id: user.id,
-        image:document.getElementById('blah').value
+        image: document.getElementById('blah').value
     }
     console.log(tabUser.id);
     for (let i = 0; i < user.length; i++) {
@@ -67,15 +79,16 @@ function modifp() {
             localStorage.setItem('User', JSON.stringify(user));
             console.log(user);
         }
-        document.getElementById("taswirtii").innerHTML=('blah'); 
     }
+    document.getElementById("taswirtii").src = ('blah');
+
 }
 function image() {
     var image = new Image();
 
 
     image.onload = function () {
-        document.getElementById("blah").src = image.src = "images/profil.jpg";
+        document.getElementById("blah").src = "profil.jpg";
     }
 
 

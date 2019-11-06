@@ -1,27 +1,27 @@
 function myUser() {
     var user1 = document.getElementById("userName").value;
 
-    
-        if (user1 == ' ') {
-            document.getElementById("messages0").innerHTML = "user name invalid";
-            console.log('non valid');
-            return false;
 
-        }
-        document.getElementById("messages0").innerHTML = "";
-         return true;
-    
+    if (user1 == ' ') {
+        document.getElementById("messages0").innerHTML = "user name invalid";
+        console.log('non valid');
+        return false;
+
     }
-    // if (user1.indexOf(' ') >= 0) {
+    document.getElementById("messages0").innerHTML = "";
+    return true;
 
-    //     console.log('non valid');
+}
+// if (user1.indexOf(' ') >= 0) {
 
-    //     return false
-    // }
+//     console.log('non valid');
 
-    // console.log('valid');
+//     return false
+// }
 
-    // return true;
+// console.log('valid');
+
+// return true;
 
 
 function mynom() {
@@ -30,12 +30,12 @@ function mynom() {
 
     if (nom1 == '') {
         document.getElementById("messages01").innerHTML = "remplir ce champ";
-        
+
         console.log('non valid');
-         return false; 
+        return false;
     }
     document.getElementById("messages01").innerHTML = "";
-     return true;
+    return true;
 
 }
 function myprenom() {
@@ -43,12 +43,12 @@ function myprenom() {
     var pre = document.getElementById("prenom").value;
 
     if (pre == '') {
-        document.getElementById("messages02").innerHTML = "remplir ce champ";  
+        document.getElementById("messages02").innerHTML = "remplir ce champ";
         console.log('non valid');
         return false;
     }
     document.getElementById("messages02").innerHTML = "";
-     return true;
+    return true;
 }
 function myemail() {
     var str1 = document.getElementById("mail").value;
@@ -86,16 +86,16 @@ function myadresse() {
     var add = document.getElementById("adresse").value;
 
     if (add == '') {
-        document.getElementById("messages05").innerHTML = "remplir ce champ";  
+        document.getElementById("messages05").innerHTML = "remplir ce champ";
         console.log('non valid');
         return false;
     }
     document.getElementById("messages05").innerHTML = "";
-     return true;
+    return true;
 }
-function clickh() { 
-var sdf= document.querySelector('input[name="genre"]:checked').value ;  
-// document.getElementById("messages06").value=sdf ;
+function clickh() {
+    var sdf = document.querySelector('input[name="genre"]:checked').value;
+    // document.getElementById("messages06").value=sdf ;
 }
 
 // function clickh() { 
@@ -164,7 +164,7 @@ function myConfirm() {
 
 }
 
-function myBoutton() { 
+function myBoutton() {
     var User = localStorage.getItem('User')
     User = JSON.parse(User)
     if (User == null) {
@@ -173,21 +173,21 @@ function myBoutton() {
 
 
     console.log(User);
-    var etatUser='';
+    var etatUser = '';
     var utilisateur = {
 
-        id : Math.floor((Math.random() * 1000) + 1),
+        id: Math.floor((Math.random() * 1000) + 1),
         userName: document.getElementById("userName").value,
         nom: document.getElementById("nom").value,
         prenom: document.getElementById("prenom").value,
         email: document.getElementById("mail").value,
         dateDeNaissance: document.getElementById("naiss").value,
         num: document.getElementById("num").value,
-        adresse:document.getElementById("adresse").value,
+        adresse: document.getElementById("adresse").value,
         password: document.getElementById("pass").value,
-        sexe: document.querySelector('input[name="genre"]:checked').value, 
+        sexe: document.querySelector('input[name="genre"]:checked').value,
         Etat: etatUser,
-        image: "./images/imgdefault.jpg"
+        image: "imgdefault.jpg"
         // confirmPassword: document.getElementById("confirmMot").value,
 
     };
@@ -200,7 +200,7 @@ function myBoutton() {
 }
 function check() {
     var User = JSON.parse(localStorage.getItem("User"));
-    
+
 
     var userName = document.getElementById('login');
     var userPw = document.getElementById('mdpass');
@@ -211,51 +211,56 @@ function check() {
             location.href = 'dashboard admin/index.html';
             // verif = true; 
             // if(User[i].Etat.match("Inactive")) {
-           //   location.href="#";
+            //   location.href="#";
             //} 
-        
+
         }
-        else if(User[i].Etat.match("Inactive")) {
-            location.href="#";
-            document.getElementById("bloq").innerHTML="votre compte a été désactivé";
-             } 
+        else if (User[i].Etat.match("Inactive")) {
+            location.href = "#";
+            document.getElementById("bloq").innerHTML = "votre compte a été désactivé";
+        }
         else if (userName.value == User[i].userName && userPw.value == User[i].password) {
-                 
+
             localStorage.setItem("loggedUser", JSON.stringify(User[i]))
             location.href = 'userConnected.html';
             // verif = true;  
             //  console.log(logged);               
+        }
     }
-    } 
-    
+
 }
-function logout() { 
+function logout() {
     localStorage.removeItem('loggedUser');
     location.href = 'index.html';
-} 
+}
 
-function connected() { 
+function connected() {
     var loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
-    
-    if(loggedUser == null) { 
-        console.log(loggedUser) ;
-        
+
+    if (loggedUser == null) {
+        console.log(loggedUser);
+
         location.href = 'index.html';
     }
-    else {location.href = 'userConnected.html'; } 
+    else { location.href = 'userConnected.html'; }
 }
-function aboutConnected() { 
+function aboutConnected() {
     var loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
-    
-    if(loggedUser == null) { 
-        console.log(loggedUser) ;
-        
+
+    if (loggedUser == null) {
+        console.log(loggedUser);
+
         location.href = 'about.html';
     }
-    else {location.href = 'aboutConnected.html'; } 
+    else { location.href = 'aboutConnected.html'; }
 }
 
-function session() {  
-    var logged = JSON.parse(localStorage.getItem('loggedUser'));  
-    document.getElementById('loggedU').innerHTML=logged.userName ; 
+function session() {
+    var logged = JSON.parse(localStorage.getItem('loggedUser'));
+    document.getElementById('loggedU').innerHTML = logged.userName;
+    document.getElementById('taswirti').src = './images/' + logged.image;
+    console.log('./images/' + logged.image);
+    console.log( document.getElementById('taswirti'));
+    
+    
 }
