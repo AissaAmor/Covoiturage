@@ -41,11 +41,14 @@ function modif() {
     document.getElementById('num').value = loggedin.num;
     document.getElementById('email').value = loggedin.email;
     document.getElementById('date').value = loggedin.dateDeNaissance;
+    document.getElementById('blah').src = loggedin.image;
+    // document.getElementById('blahh')..setAttribute("class", )=loggedin.yourimage;
+    // document.getElementById("H1")[0].setAttribute("class", "democlass");
     // document.getElementById('hom').value=loggedin[i].sex;
 }
 function modifp() {
     var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
-    var   user = JSON.parse(localStorage.getItem('User')) || []
+    var user = JSON.parse(localStorage.getItem('User')) || []
     var tabUser = {
         username: document.getElementById('uname').value,
         nom: document.getElementById('nom').value,
@@ -53,7 +56,8 @@ function modifp() {
         nume: document.getElementById('num').value,
         email: document.getElementById('email').value,
         dat: document.getElementById('date').value,
-        id: user.id
+        id: user.id,
+        image:document.getElementById('blah').value
     }
     console.log(tabUser.id);
     for (let i = 0; i < user.length; i++) {
@@ -63,5 +67,17 @@ function modifp() {
             localStorage.setItem('User', JSON.stringify(user));
             console.log(user);
         }
+        document.getElementById("taswirtii").innerHTML=('blah'); 
     }
+}
+function image() {
+    var image = new Image();
+
+
+    image.onload = function () {
+        document.getElementById("blah").src = image.src = "images/profil.jpg";
+    }
+
+
+
 }

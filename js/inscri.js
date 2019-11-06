@@ -186,7 +186,8 @@ function myBoutton() {
         adresse:document.getElementById("adresse").value,
         password: document.getElementById("pass").value,
         sexe: document.querySelector('input[name="genre"]:checked').value, 
-        Etat: etatUser
+        Etat: etatUser,
+        image: "./images/imgdefault.jpg"
         // confirmPassword: document.getElementById("confirmMot").value,
 
     };
