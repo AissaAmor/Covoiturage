@@ -110,10 +110,19 @@
     background-color: #FB973D;
     padding: 16px 20px;
     margin: 8px 0;
+    margin-left: 100px;
     border: none;
     cursor: pointer;
-    width: 30%;
+    width: 50%;
     color: white;
+  }
+  #reservationNumber{
+      margin-left: 100px;
+      width: 200px;
+      font-weight: 500;
+      height: 50px;
+      font-size: 13px;
+  
   }
 #mesVoitures {
     background-color: #F7B71D;
@@ -176,6 +185,123 @@
 #attribut{
     width: 460px;
 }
+#messageErreur{
+    color: red;
+    margin-left: 100px;
+}
+
+
+/* Tableau des annonces */
+.table {
+  min-width: 1000px !important;
+  width: 100%; }
+  .table th {
+    font-weight: 500; }
+  .table .thead-primary {
+    background: transparent; }
+    .table .thead-primary tr th {
+      padding: 30px 10px;
+      color: #fff !important;
+      border: 1px solid transparent !important; }
+      .table .thead-primary tr th.heading {
+        border-right: 1px solid #fff !important;
+        position: relative; }
+        .table .thead-primary tr th.heading:last-child {
+          border-right: none !important; }
+        .table .thead-primary tr th.heading:after {
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          right: 0;
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 10px 100px 0 100px;
+          border-color: #fc983c transparent transparent transparent;
+          margin: 0 auto;
+          z-index: 1; }
+      .table .thead-primary tr th.bg-black:after {
+        border-color: #000000 transparent transparent transparent; }
+      .table .thead-primary tr th.bg-dark:after {
+        border-color: #343a40 transparent transparent transparent; }
+  .table tbody tr td {
+    vertical-align: middle;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important; }
+    .table tbody tr td.car-image .img {
+      display: block;
+      width: 180px;
+      height: 100px;
+      margin: 0 auto; }
+    .table tbody tr td.product-name h3 {
+      font-size: 18px; }
+    .table tbody tr td.product-name .rated span {
+      color: #f7b71d; }
+      .table tbody tr td.product-name .rated span:nth-child(1) {
+        color: #000000; }
+      .table tbody tr td.product-name .rated span:last-child {
+        color: rgba(0, 0, 0, 0.1); }
+    .table tbody tr td.price {
+      text-align: center !important;
+      background: rgba(0, 0, 0, 0.05);
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #fff !important;
+      position: relative; }
+      .table tbody tr td.price:last-child {
+        border-left: none; }
+      .table tbody tr td.price h3 {
+        position: relative; }
+        .table tbody tr td.price h3 small {
+          position: absolute;
+          top: 0;
+          left: -10px;
+          font-size: 14px; }
+        .table tbody tr td.price h3 span.num {
+          color: #fc983c;
+          font-size: 20px;
+          position: relative; }
+        .table tbody tr td.price h3 span.per {
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.4); }
+      .table tbody tr td.price .subheading {
+        font-size: 14px; }
+      .table tbody tr td.price .btn-custom {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        opacity: 0;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        z-index: 1; }
+        .table tbody tr td.price .btn-custom a {
+          padding: 7px 20px;
+          display: inline-block;
+          background: #fff;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          border-radius: 5px;
+          -webkit-box-shadow: -10px 10px 25px -15px rgba(0, 0, 0, 0.17);
+          -moz-box-shadow: -10px 10px 25px -15px rgba(0, 0, 0, 0.17);
+          box-shadow: -10px 10px 25px -15px rgba(0, 0, 0, 0.17); }
+      .table tbody tr td.price .price-rate {
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        transition: all 0.3s ease; }
+      .table tbody tr td.price:hover .btn-custom {
+        opacity: 1; }
+      .table tbody tr td.price:hover .price-rate {
+        opacity: 0; }
 #tra{font-family:palatino;
     font-size:50px;
     color: rgb(247, 70, 0);

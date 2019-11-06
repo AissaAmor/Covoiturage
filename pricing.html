@@ -49,7 +49,7 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right menuyeah" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="pricing.html">Modifier Profile</a>
+              <a class="dropdown-item" href="pricing.html">Modifier Profil</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item text-danger" onclick="logout()" href="index.html">Se Déconnecter</a>
             </div>
@@ -59,8 +59,7 @@
     </div>
   </nav>
   <!-- END nav -->
-  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/covoiturage2.jpg');"
-    data-stellar-background-ratio="0.5">
+  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/dd.png');" data-stellar-background-ratio="0.5">
     <img src="/images/car-10.jpg">
     <div class="overlay"></div>
     <div class="container">
@@ -78,9 +77,9 @@
     <p id="profilTitre">Modifier votre profil</p><br>
     <div id="buttonProfil">
       <input type="button" value="Informations Personnel" id="mesVoitures" onclick="infoPerso()"><br>
-      
       <input type="button" value="Informations Voiture" id="mesVoitures" onclick="infoVoiture()">
       <input type="button" id="mesVoitures" onclick="afficheAnnonceProfil()" value="Afficher les annonces">
+      <div id="messageErreur"></div>
     </div>
     <div id="infoProfil">
       <div class="row personnelInfo">
@@ -158,10 +157,8 @@
   <section id="part1">
     <div class="row mesTrajets"> 
       <div class="col-md-2"></div>
-      <div class="col-md-10">
-       
-    
-        <table id="table1"></table>
+      <div class="col-md-10"> 
+       <table id="table1"></table>
       </div><br><br><br><br>
   </section>
   <section id="part2">

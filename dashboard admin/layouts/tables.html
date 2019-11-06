@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="../dist/css/adminx.css" media="screen" />
   </head>
-  <body>
+  <body onload="affichAnnonce()">
     <div class="adminx-container">
       <!-- Header -->
       <nav class="navbar navbar-expand justify-content-between fixed-top">
@@ -91,7 +91,7 @@
               <a class="dropdown-item" href="#">My Tasks</a>
               <a class="dropdown-item" href="#">Settings</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item text-danger" href="#">Sign out</a>
+              <a class="dropdown-item text-danger" href="../../index.html" onclick="logout2()">Sign out</a>
             </div>
           </li>
         </ul>
@@ -419,7 +419,7 @@
                     <div class="card-header-title">Table</div>
                   </div>
                   <div class="table-responsive-md">
-                    <table class="table table-actions table-striped table-hover mb-0">
+                    <table class="table table-actions table-striped table-hover mb-0" id="tableAnn">
                       <thead>
                         <tr>
                           <th scope="col">
@@ -434,7 +434,8 @@
                           <th scope="col">Arrivée</th>
                           <th scope="col">Date</th>
                           <th scope="col">place disponible</th>
-                          <th scope="col">Avis</th>
+                          <th scope="col">Prix</th>
+                          <th scope="col">Commentaire</th>
                           <th scope="col">Actions</th>
                         </tr>
                       </thead>
@@ -452,11 +453,12 @@
                           <td>sousse</td>
                           <td>12/10/2019</td>
                           <td>2</td>
+                          <td> </td>
                           <td>....</td>
                           
                           <td>
                             <!-- <button class="btn btn-sm btn-primary">Edit</button> -->
-                            <button class="btn btn-sm btn-danger">Delete</button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteAnnonce()">Delete</button>
                           </td>
                         </tr>
                         <!-- <tr>
