@@ -2,18 +2,29 @@
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
+        var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
 
         reader.onload = function (e) {
             $('#imageProfil')
                 .attr('src', e.target.result)
                 .width(150)
                 .height(200);
+            loggedin.image = e.target.result;
+            localStorage.setItem('loggedUser', JSON.stringify(loggedin));
         };
-
         reader.readAsDataURL(input.files[0]);
     }
 }
 
+function img() {
+    var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
+    $('#blah')
+    .attr('src', e.target.result)
+
+    loggedin.image = e.target.result;
+    localStorage.setItem('loggedUser', JSON.stringify(loggedin));
+
+}
 
 function voi(input) {
     if (input.files && input.files[0]) {
@@ -76,13 +87,15 @@ function modifierProfil() {
         }
         document.getElementById("taswirtii").innerHTML=('imageProfil'); 
     }
+    document.getElementById("taswirtii").src = ('imageProfil');
+
 }
 function image() {
     var image = new Image();
 
 
     image.onload = function () {
-        document.getElementById("imageProfil").src = image.src = "images/profil.jpg";
+        document.getElementById("imageProfil").src = "profil.jpg";
     }
 
 

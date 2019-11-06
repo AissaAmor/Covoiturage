@@ -18,6 +18,7 @@ function affichUser() {
       </label>
     </th>
     <th scope="col">ID</th>
+    <th scope="col">Image</th>
     <th scope="col">Username</th>
     <th scope="col">NOM</th>
     <th scope="col">PRENOM</th>
@@ -42,6 +43,7 @@ function affichUser() {
               </th> -->
               <td></td>
               <td>${todoUser[i].id}</td>
+              <td><img width=50 src='../../images/${todoUser[i].image}'></td>
               <td>${todoUser[i].userName}</td>
               <td>${todoUser[i].nom}</td>
               <td>${todoUser[i].prenom}</td>
