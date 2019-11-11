@@ -1,28 +1,28 @@
 // function readURL(input) {
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
+// function readURL(input) {
+//     if (input.files && input.files[0]) {
+//         var reader = new FileReader();
+//         var connectedUser = JSON.parse(localStorage.getItem('loggedUser'))
 
-        reader.onload = function (e) {
-            $('#imageProfil')
-                .attr('src', e.target.result)
-                .width(150)
-                .height(200);
-            loggedin.image = e.target.result;
-            localStorage.setItem('loggedUser', JSON.stringify(loggedin));
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
+//         reader.onload = function (e) {
+//             $('#imageProfil')
+//                 .attr('src', e.target.result)
+//                 .width(150)
+//                 .height(200);
+//             connectedUser.image = e.target.result;
+//             localStorage.setItem('loggedUser', JSON.stringify(connectedUser));
+//         };
+//         reader.readAsDataURL(input.files[0]);
+//     }
+// }
 
 function img() {
-    var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
-    $('#blah')
-    .attr('src', e.target.result)
+    var connectedUser = JSON.parse(localStorage.getItem('loggedUser'))
+    $('#imageProfil')
+        .attr('src', e.target.result)
 
-    loggedin.image = e.target.result;
-    localStorage.setItem('loggedUser', JSON.stringify(loggedin));
+    connectedUser.image = e.target.result;
+    localStorage.setItem('loggedUser', JSON.stringify(connectedUser));
 
 }
 
@@ -33,8 +33,8 @@ function voi(input) {
         reader.onload = function (e) {
             $('#imageProfil')
                 .attr('src', e.target.result)
-                .width(150)
-                .height(200);
+                .width(15);
+
         };
 
         reader.readAsDataURL(input.files[0]);
@@ -43,51 +43,56 @@ function voi(input) {
 
 
 function modif() {
-    var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
+    var connectedUser = JSON.parse(localStorage.getItem('loggedUser'))
     // var user = JSON.parse(localStorage.getItem('User')) || []
 
-    document.getElementById('username').value = loggedin.userName;
-    document.getElementById('nom').value = loggedin.nom;
-    document.getElementById('prenom').value = loggedin.prenom;
-    document.getElementById('email').value = loggedin.email;
-    document.getElementById('Adress').value = loggedin.adresse;
-    document.getElementById('numTel').value = loggedin.num;
-    document.getElementById('dateNaissance').value = loggedin.dateDeNaissance;
-    document.getElementById('imageProfil').src = loggedin.image;
+    document.getElementById('username').value = connectedUser.userName;
+    document.getElementById('nom').value = connectedUser.nom;
+    document.getElementById('prenom').value = connectedUser.prenom;
+    document.getElementById('email').value = connectedUser.email;
+    document.getElementById('Adress').value = connectedUser.adresse;
+    document.getElementById('numTel').value = connectedUser.num;
+    document.getElementById('dateNaissance').value = connectedUser.dateDeNaissance;
+    document.getElementById('imageProfil').src = './images/' + connectedUser.image;
     // document.getElementById('blahh')..setAttribute("class", )=loggedin.yourimage;
     // document.getElementById("H1")[0].setAttribute("class", "democlass");
     // document.getElementById('hom').value=loggedin[i].sex;
 }
 function modifierProfil() {
-    var loggedin = JSON.parse(localStorage.getItem('loggedUser'))
-    var user = JSON.parse(localStorage.getItem('User')) || []
-    console.log(user.id)
+    var connectedUser = JSON.parse(localStorage.getItem('loggedUser'))
+    var user = JSON.parse(localStorage.getItem('User'))
+    var fullPath = document.getElementById("imageProfil").src;
+     var filename = fullPath.replace(/^.*[\\\/]/, '');
+    if (user == null) {
+        user = []
+    }
+    // console.log(user.id)
     // console.log(tabUser.id);
     for (let i = 0; i < user.length; i++) {
-        if (user[i].id == loggedin.id) {
-                var tabUser = {
-                    Etat:user[i].Etat, 
-                    username: document.getElementById('username').value,
-                    nom: document.getElementById('nom').value,
-                    prenom: document.getElementById('prenom').value,
-                    email: document.getElementById('email').value,
-                    adresse: document.getElementById('Adress').value,
-                    num: document.getElementById('numTel').value,
-                    dateDeNaissance: document.getElementById('dateNaissance').value,
-                    id: user[i].id,
-                    image:document.getElementById('imageProfil').value,
-                    sexe:user[i].sexe
-                }
+        if (user[i].id == connectedUser.id) {
+            var tabUser = {
+                Etat: user[i].Etat,
+                adresse: document.getElementById('Adress').value,
+                dateDeNaissance: document.getElementById('dateNaissance').value,
+                email: document.getElementById('email').value,
+                id: user[i].id,
+                image: filename,
+                nom: document.getElementById('nom').value,
+                num: document.getElementById('numTel').value,
+                password: user[i].password,
+                prenom: document.getElementById('prenom').value,
+                sexe: user[i].sexe,
+                userName: document.getElementById('username').value
+            }
             user.splice(i, 1, tabUser);
-            // loggedin.splice(1,1,tabUser);
-            console.log(i);
+            // console.log(i);
             localStorage.setItem('User', JSON.stringify(user));
-            localStorage.setItem('loggedUser', JSON.stringify(loggedin));
-            console.log(user);
+            localStorage.setItem('loggedUser', JSON.stringify(user[i]));
+            // console.log(user);
         }
-        document.getElementById("taswirtii").innerHTML=('imageProfil'); 
+        // document.getElementById("taswirtii").innerHTML=('imageProfil'); 
     }
-    document.getElementById("taswirtii").src = ('imageProfil');
+    // document.getElementById("taswirtii").src = ('imageProfil');
 
 }
 function image() {

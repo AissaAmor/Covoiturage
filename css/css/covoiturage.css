@@ -189,10 +189,12 @@
     color: red;
     margin-left: 100px;
 }
-
+#imageProfil{
+  width: 200px;
+}
 
 /* Tableau des annonces */
-.table {
+/* .table {
   min-width: 1000px !important;
   width: 100%; }
   .table th {
@@ -305,6 +307,10 @@
 #tra{font-family:palatino;
     font-size:50px;
     color: rgb(247, 70, 0);
-    margin-left: 450px;
+    margin-left: 450px; */
 
 }
+/* 
+body {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+} */

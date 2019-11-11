@@ -3,7 +3,7 @@ function myUser() {
 
 
     if (user1 == ' ') {
-        document.getElementById("messages0").innerHTML = "user name invalid";
+        document.getElementById("messages0").innerHTML = "username invalid";
         console.log('non valid');
         return false;
 
@@ -206,7 +206,7 @@ function check() {
     var userPw = document.getElementById('mdpass');
     // var verif = false;
     for (i = 0; i < User.length; i++) {
-        if (userName.value == User[i].userName.match("hach") && userPw.value == User[i].password) {
+        if (userName.value == User[i].userName.match("admin") && userPw.value == User[i].password) {
             localStorage.setItem("loggedUser", JSON.stringify(User[i]))
             location.href = 'dashboard admin/index.html';
             // verif = true; 
@@ -258,7 +258,7 @@ function aboutConnected() {
 function session() {
     var logged = JSON.parse(localStorage.getItem('loggedUser'));
     document.getElementById('loggedU').innerHTML = logged.userName;
-    document.getElementById('taswirti').src = './images/' + logged.image;
+    document.getElementById('taswirtii').src = './images/' + logged.image;
     console.log('./images/' + logged.image);
     console.log( document.getElementById('taswirti'));
     

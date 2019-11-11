@@ -122,6 +122,7 @@ function affichAnnonce() {
   </th>
   <th scope="col">ID</th>
   <th scope="col">IDUSER</th>
+  <th scope="col">Annonceur</th>
   <th scope="col">Départ</th>
   <th scope="col">Arrivée</th>
   <th scope="col">Date</th>
@@ -144,6 +145,7 @@ function affichAnnonce() {
             <td></td>
             <td>${ann[i].id}</td>
             <td>${ann[i].iduser}</td>
+            <td>${ann[i].nomUser}</td>
             <td>${ann[i].departTrajet}</td>
             <td>${ann[i].arriveTrajet}</td>
             <td>${ann[i].dateTrajet}</td>
